@@ -1,0 +1,22 @@
+.bg {
+  @media screen and (min-width: 0px) {
+    background-image: url(/assets/bg/mobile/s6-1x.jpg);
+    @media screen and (min-resolution: 2dppx) {
+      background-image: url(/assets/bg/mobile/s6-2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image: url(/assets/bg/tablet/s6-1x.jpg);
+    @media screen and (min-resolution: 2dppx) {
+      background-image: url(/assets/bg/tablet/s6-2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    background-image: url(/assets/bg/desktop/s6-1x.jpg);
+    @media screen and (min-resolution: 2dppx) {
+      background-image: url(/assets/bg/desktop/s6-2x.jpg);
+    }
+  }
+}

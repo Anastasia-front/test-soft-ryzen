@@ -1,5 +1,5 @@
 import Section from "@/app/components/Section/Section";
-import s from "./About.module.scss";
+import s from "./styles.module.scss";
 
 export default function About() {
   return (
