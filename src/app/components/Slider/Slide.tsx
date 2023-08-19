@@ -1,3 +1,5 @@
+"use client";
+
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 import DesktopServices from "./DesktopServices";
 import MobileServices from "./MobileServices";

@@ -14,7 +14,7 @@ export default function DesktopServices({ number }: { number: number }) {
   const src = photos[number];
 
   return (
-    <Section className={s.bgOverlay}>
+    <Section className={s.bgOverlay} id="services">
       <div className="flex flex-col w-full">
         <div className="flex gap-[162px] text-98 ">
           <h1 className="font-100 uppercase leading-normal tracking-[-3.92px] items-start">
@@ -52,7 +52,7 @@ export default function DesktopServices({ number }: { number: number }) {
                     >
                       {a.active && (
                         <Image
-                          src="/rhombus.svg"
+                          src="/svg/rhombus.svg"
                           alt="rhombus"
                           width={6}
                           height={6}

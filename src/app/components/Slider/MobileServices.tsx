@@ -14,7 +14,7 @@ export default function MobileServices({ number }: { number: number }) {
   const src = photos[number];
 
   return (
-    <Section className={s.bgOverlay}>
+    <Section className={s.bgOverlay} id="services">
       <div className="min-h-[739px] flex flex-col justify-between items-center gap-[50px]">
         <div className="flex flex-col gap-[24px] w-full">
           <h1 className="text-40 font-100 uppercase leading-[56px] tracking-[-1.6px] items-start">
@@ -50,7 +50,7 @@ export default function MobileServices({ number }: { number: number }) {
                 >
                   {a.active && (
                     <Image
-                      src="/rhombus.svg"
+                      src="/svg/rhombus.svg"
                       alt="rhombus"
                       width={6}
                       height={6}

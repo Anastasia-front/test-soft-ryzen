@@ -14,7 +14,7 @@ export default function TabletServices({ number }: { number: number }) {
   const src = photos[number];
 
   return (
-    <Section className={s.bgOverlay}>
+    <Section className={s.bgOverlay} id="services">
       <div className="flex flex-col  gap-[24px] w-full">
         <div className="flex justify-between text-67 ">
           <h1 className="font-100 uppercase leading-normal tracking-[-2.68px] items-start">
@@ -52,7 +52,7 @@ export default function TabletServices({ number }: { number: number }) {
                     >
                       {a.active && (
                         <Image
-                          src="/rhombus.svg"
+                          src="/svg/rhombus.svg"
                           alt="rhombus"
                           width={6}
                           height={6}

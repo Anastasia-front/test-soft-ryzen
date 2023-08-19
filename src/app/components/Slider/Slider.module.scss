@@ -131,7 +131,7 @@
   padding: 10px 0;
   justify-content: center;
   @media screen and (min-width: 1280px) {
-    bottom: -3%;
+    bottom: 3%;
   }
 }
 
@@ -183,4 +183,5 @@
 
 .arrowDisabled {
   fill: rgba(255, 255, 255, 0.5);
+  cursor: default;
 }

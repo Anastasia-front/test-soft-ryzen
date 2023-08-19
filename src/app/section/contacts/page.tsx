@@ -3,7 +3,7 @@ import s from "./styles.module.scss";
 
 export default function Contacts() {
   return (
-    <Section className={s.bg}>
+    <Section className={s.bg} id="contacts">
       <h1>Contacts</h1>
     </Section>
   );

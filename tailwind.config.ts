@@ -11,11 +11,11 @@ const config: Config = {
       sm: "400px",
       md: "768px",
       xl: "1280px",
+      xxl: "1440px",
     },
     colors: {
       white: "#fff",
       red: "#FF5757",
-      light1: "rgba(255, 255, 255, 0.1)",
       light2: "rgba(255, 255, 255, 0.2)",
     },
     fontFamily: {
@@ -50,6 +50,10 @@ const config: Config = {
       700: "700",
       800: "800",
       900: "900",
+    },
+    backgroundColor: {
+      overlay: "rgba(1, 10, 5, 0.75)",
+      light1: "rgba(255, 255, 255, 0.1)",
     },
   },
   plugins: [],
