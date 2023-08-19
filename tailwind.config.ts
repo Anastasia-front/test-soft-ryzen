@@ -7,10 +7,14 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "400px",
+    },
     colors: {
       white: "#fff",
-      red: "#FF5757;",
-      bg: "rgba(255, 255, 255, 0.10);",
+      red: "#FF5757",
+      light1: "rgba(255, 255, 255, 0.1)",
+      light2: "rgba(255, 255, 255, 0.2)",
     },
     fontFamily: {
       inter: ["Inter", " sans-serif"],
