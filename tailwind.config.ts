@@ -9,6 +9,8 @@ const config: Config = {
   theme: {
     screens: {
       sm: "400px",
+      md: "768px",
+      xl: "1280px",
     },
     colors: {
       white: "#fff",

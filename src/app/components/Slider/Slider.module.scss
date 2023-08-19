@@ -130,6 +130,9 @@
   display: flex;
   padding: 10px 0;
   justify-content: center;
+  @media screen and (min-width: 1280px) {
+    bottom: -3%;
+  }
 }
 
 .dot {
@@ -162,11 +165,12 @@
   width: 50px;
   height: 100px;
   position: absolute;
-  top: 175px;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
+  top: 125px;
   fill: #fff;
   cursor: pointer;
+  @media screen and (min-width: 768px) {
+    top: 50%;
+  }
 }
 
 .arrowLeft {

@@ -3,9 +3,8 @@
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import React, { useState } from "react";
-// import MobileServices from "./MobileServices";
+import Slide from "./Slide";
 import s from "./Slider.module.scss";
-import TabletServices from "./TabletServices";
 import { content } from "./content";
 
 export default function Slider() {
@@ -39,8 +38,7 @@ export default function Slider() {
                 bgClassNames[number.id]
               }`}
             >
-              {/* <MobileServices number={index} /> */}
-              <TabletServices number={index} />
+              <Slide number={index} />
             </div>
           ))}
         </div>

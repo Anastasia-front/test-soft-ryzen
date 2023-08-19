@@ -22,7 +22,7 @@ export default function MobileServices({ number }: { number: number }) {
             <span className="font-500">{content[number].titlePartTBold}</span>
           </h1>
           <div className="flex flex-col items-end gap-[16px]">
-            <p className=" self-right text-43 font-100 mr-[30px] relative">
+            <p className=" self-right text-43 font-100 mr-[30px]">
               {content[number].currentNumber}
               <span className="text-light2">
                 {content[number].amountOfSlides}
