@@ -3,25 +3,31 @@
 @tailwind utilities;
 
 body {
-  scroll-behavior: smooth;
-  color: #fff;
-  background: #000;
+	color: #fff;
+	background: #000;
+	scroll-behavior: smooth;
+	user-select: none;
 }
 li {
-  list-style: none;
+	list-style: none;
 }
 a {
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
 }
+a:hover,
+button:hover {
+	text-shadow: 1px 0 10px #fff;
+}
+
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 img {
-  display: block;
-  margin: 0;
+	display: block;
+	margin: 0;
 }
 h1,
 h2,
@@ -31,6 +37,6 @@ h5,
 h6,
 p,
 ul {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }

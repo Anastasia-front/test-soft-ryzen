@@ -7,15 +7,17 @@ import Services from "@/app/section/services/page";
 import Header from "../Header/Header";
 
 export default function Sections() {
-  return (
-    <>
-      <Header className="absolute top-0 left-0" />
-      <Home className="relative" />
-      <About />
-      <Services />
-      <Career />
-      <Gallery />
-      <Contacts />
-    </>
-  );
+	return (
+		<>
+			<Header className="absolute top-0 left-0" />
+			<main>
+				<Home className="relative" />
+				<About />
+				<Services />
+				<Career />
+				<Gallery />
+				<Contacts />
+			</main>
+		</>
+	);
 }

@@ -16,6 +16,8 @@
 /build
 
 # misc
+.editorconfig
+.vscode
 .DS_Store
 *.pem
 
