@@ -9,7 +9,6 @@ import { TextInput } from "@/app/components/Input/TextInput";
 import { isObjectEmpty } from "../../../../../helpers/isObjectEmpty";
 
 import { formList } from "./data/formList";
-import { ErrorMessage } from "./ErrorMessage/ErrorMessage";
 import type { FormFields } from "./types/FormFields";
 
 import s from "./Form.module.scss";
@@ -59,7 +58,7 @@ export function Form() {
 				required: true,
 				register: () =>
 					register("fullName", {
-						required: "Enter more than 10 characters",
+						required: "Incorrect name",
 					}),
 			},
 			email: {
@@ -70,7 +69,7 @@ export function Form() {
 				required: true,
 				register: () =>
 					register("email", {
-						required: "Enter correct email",
+						required: "Incorrect email",
 					}),
 			},
 			phone: {
@@ -81,7 +80,7 @@ export function Form() {
 				required: true,
 				register: () =>
 					register("phone", {
-						required: "Поле таке пусте! Введіть більше символів!",
+						required: "Incorrect phone",
 					}),
 			},
 			position: {
@@ -90,10 +89,7 @@ export function Form() {
 				label: "Position",
 				placeholder: "Movie maker",
 				required: true,
-				register: () =>
-					register("position", {
-						required: "Поле таке пусте! Введіть більше символів!",
-					}),
+				register: () => register("position"),
 			},
 			consent: {
 				type: "checkbox",
@@ -159,7 +155,7 @@ export function Form() {
 				>
 					SEND
 				</button>
-				<ErrorMessage value="name" />
+				{/* <ErrorMessage value="name" /> */}
 			</form>
 		</div>
 	);
