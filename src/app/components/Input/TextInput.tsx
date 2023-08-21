@@ -1,12 +1,10 @@
 import { forwardRef } from "react";
 import type { FieldErrors, FieldValues } from "react-hook-form";
 
-import clsx from "clsx";
+import { isObjectEmpty } from "../../../../helpers/isObjectEmpty";
 import { InputWrapper } from "./InputWrapper/InputWrapper";
-import cs from "./commonStyle.module.scss";
 
 export type TextInputElement = HTMLInputElement;
-
 export interface TextInputProps
 	extends ReactHTMLElementAttributes<TextInputElement> {
 	label?: string;
@@ -31,21 +29,48 @@ export const TextInput = forwardRef<TextInputElement, TextInputProps>(
 		ref
 	) => {
 		const error = errors ? errors[register?.name]?.message?.toString() : "";
-		const componentClass = [error && cs.error, disabled && cs.disabled];
+		const errorWithPattern =
+			errors &&
+			!isObjectEmpty(errors) &&
+			register?.name &&
+			errors[register.name]
+				? `Incorrect ${register.name}`
+				: "";
+
+		const inputStyles = [
+			"w-[93vw]",
+			"h-[24px]",
+			"min-w-[280px]",
+			"md:min-w-[222px]",
+			"xl:h-[28px]",
+			"xl:min-w-[290px]",
+			"bg-input",
+			"py-[6px]",
+			"pl-[8px]",
+			"font-200",
+			"text-20",
+			"leading-[24px]",
+			"placeholder:text-light2",
+			"hover:bg-light1",
+			error ? "placeholder:text-red text-red" : "",
+		].join(" ");
 
 		return (
-			<label className={className}>
+			<label
+				className={
+					error ? "placeholder:text-red text-red " + className : className
+				}
+			>
 				<InputWrapper
 					label={label}
-					error={error}
+					error={errorWithPattern}
 					required={required}
 					disabled={disabled}
-					className={clsx(componentClass)}
 					showError={!!errors}
 				>
 					<input
 						type="text"
-						className={cs.input}
+						className={inputStyles}
 						placeholder={placeholder}
 						ref={ref}
 						{...register}

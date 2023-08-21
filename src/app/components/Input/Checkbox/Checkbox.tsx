@@ -6,7 +6,6 @@ import clsx from "clsx";
 import type { InputWrapperCommonProps } from "../InputWrapper/InputWrapper";
 import { InputWrapper } from "../InputWrapper/InputWrapper";
 
-import cs from "../commonStyle.module.scss";
 import s from "./Checkbox.module.scss";
 
 export type CheckboxElement = HTMLInputElement;
@@ -26,8 +25,8 @@ export const Checkbox = forwardRef<CheckboxElement, CheckboxProps>(
 	) => {
 		const error = errors ? errors[register?.name]?.message?.toString() : "";
 		const componentClass = [
-			error && cs.error,
-			disabled && cs.disabled,
+			error && "border-red",
+			disabled && "border-backgroundInput",
 			className,
 		];
 
@@ -40,8 +39,8 @@ export const Checkbox = forwardRef<CheckboxElement, CheckboxProps>(
 				className={clsx(componentClass)}
 				showError={!!errors}
 			>
-				<div className={s.elementsContainer}>
-					<label className={s.element}>
+				<div className="flex items-center min-w-[259px]">
+					<label className="flex items-start gap-[8px] cursor-pointer">
 						<input
 							type="checkbox"
 							value={text}
@@ -50,7 +49,7 @@ export const Checkbox = forwardRef<CheckboxElement, CheckboxProps>(
 							{...register}
 							{...rest}
 						/>
-						<p className={s.label}>{text}</p>
+						<p className="text-12 font-200 text-cap leading-[20px] ">{text}</p>
 					</label>
 				</div>
 			</InputWrapper>

@@ -1,12 +1,12 @@
 "use client";
 
-import { Button } from "@/app/components/Button/Button";
-import { Checkbox } from "@/app/components/Input/Checkbox/Checkbox";
-import { TextInput } from "@/app/components/Input/TextInput";
-import { Textarea } from "@/app/components/Textarea/Textarea";
 import { useMemo } from "react";
 import type { SubmitHandler, UseFormRegisterReturn } from "react-hook-form";
 import { useForm } from "react-hook-form";
+
+import { Button } from "@/app/components/Button/Button";
+import { TextInput } from "@/app/components/Input/TextInput";
+import { Textarea } from "@/app/components/Textarea/Textarea";
 // import { isObjectEmpty } from "../../../../../helpers/isObjectEmpty";
 import { formList } from "./data/formList";
 import type { FormFields } from "./types/FormFields";
@@ -33,21 +33,16 @@ export function Form() {
 		register,
 		reset,
 		handleSubmit,
-		watch,
+		// watch,
 		formState: { errors },
 	} = useForm<FormFields>({
 		mode: "onSubmit",
 		defaultValues: {
 			fullName: "",
 			email: "",
-			phone: "",
-			position: "",
 			textarea: "",
-			consent: false,
 		},
 	});
-
-	const watchConsent = watch("consent");
 
 	const formFieldsData: FormFieldsData = useMemo(
 		() => ({
@@ -75,44 +70,12 @@ export function Form() {
 						pattern: /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,
 					}),
 			},
-			phone: {
-				type: "text",
-				name: "phone",
-				label: "Phone",
-				placeholder: "+38 (097) 12 34 567",
-				required: true,
-				register: () =>
-					register("phone", {
-						required: "Incorrect phone",
-						pattern:
-							/^(?:(?:\+380|0)[.-]?\d{2}[.-]?\d{2}[.-]?\d{2}[.-]?\d{3}|\d{10})$/,
-					}),
-			},
-			position: {
-				type: "text",
-				name: "position",
-				label: "Position",
-				placeholder: "Movie maker",
-				required: true,
-				register: () => register("position"),
-			},
 			textarea: {
 				type: "textarea",
 				name: "textarea",
 				label: "Message",
 				placeholder: "",
 				register: () => register("textarea"),
-			},
-			consent: {
-				type: "checkbox",
-				name: "consent",
-				placeholder: "",
-				required: true,
-				register: () =>
-					register("consent", {
-						required: true,
-					}),
-				text: "I confirm my consent to the processing of personal data.",
 			},
 		}),
 		[register]
@@ -145,11 +108,7 @@ export function Form() {
 								required={formFieldsData[field].required}
 								disabled={formFieldsData[field].disabled}
 								placeholder={formFieldsData[field].placeholder}
-								className={`self-start ${
-									formFieldsData[field].name === "phone"
-										? "placeholder:first-line:text-white"
-										: ""
-								}`}
+								className="self-start"
 							/>
 						);
 					case "textarea":
@@ -159,27 +118,14 @@ export function Form() {
 								label={formFieldsData[field].label}
 								register={formFieldsData[field].register()}
 								errors={errors}
-								disabled={formFieldsData[field].disabled}
-								className="self-start"
-							/>
-						);
-
-					case "checkbox":
-						return (
-							<Checkbox
-								key={field}
-								label={formFieldsData[field].label}
-								register={formFieldsData[field].register()}
-								errors={errors}
 								required={formFieldsData[field].required}
 								disabled={formFieldsData[field].disabled}
-								className="self-start"
-								text={formFieldsData[field].text || ""}
+								className="self-start md:min-w-[463px] md:h-[222px] xl:h-[174px] xl:min-w-[607px]"
 							/>
 						);
 				}
 			})}
-			<Button type="submit" submit disabled={!watchConsent}>
+			<Button type="submit" submit>
 				SEND
 			</Button>
 		</form>

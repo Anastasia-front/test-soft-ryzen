@@ -4,5 +4,5 @@ export interface FormFields {
 	position: string;
 	phone: string;
 	textarea: string;
-	consent: boolean;
+	consent: string;
 }

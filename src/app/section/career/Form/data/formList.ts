@@ -3,5 +3,6 @@ export const formList: string[] = [
 	"email",
 	"position",
 	"phone",
+	"textarea",
 	"consent",
 ];

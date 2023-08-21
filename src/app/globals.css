@@ -22,6 +22,10 @@ button:hover {
 	text-shadow: 1px 0 10px #fff;
 }
 
+button:disabled:hover {
+	text-shadow: none;
+}
+
 button {
 	cursor: pointer;
 }
