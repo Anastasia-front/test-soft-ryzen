@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/app/components/Button/Button";
 import { TextInput } from "@/app/components/Input/TextInput";
 import { Textarea } from "@/app/components/Textarea/Textarea";
-// import { isObjectEmpty } from "../../../../../helpers/isObjectEmpty";
+import { isObjectEmpty } from "../../../../../helpers/isObjectEmpty";
 import { formList } from "./data/formList";
 import type { FormFields } from "./types/FormFields";
 
@@ -33,14 +33,14 @@ export function Form() {
 		register,
 		reset,
 		handleSubmit,
-		// watch,
+		watch,
 		formState: { errors },
 	} = useForm<FormFields>({
 		mode: "onSubmit",
 		defaultValues: {
 			fullName: "",
 			email: "",
-			textarea: "",
+			message: "",
 		},
 	});
 
@@ -70,12 +70,12 @@ export function Form() {
 						pattern: /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,
 					}),
 			},
-			textarea: {
-				type: "textarea",
-				name: "textarea",
+			message: {
+				type: "message",
+				name: "message",
 				label: "Message",
 				placeholder: "",
-				register: () => register("textarea"),
+				register: () => register("message"),
 			},
 		}),
 		[register]
@@ -87,7 +87,15 @@ export function Form() {
 		reset();
 	};
 
-	// const isValidFixed = isObjectEmpty(errors);
+	const isValidFixed =
+		isObjectEmpty(errors) &&
+		formList.every((field) => {
+			const fieldData = formFieldsData[field];
+			if (fieldData.required) {
+				return !!watch(fieldData.name);
+			}
+			return true;
+		});
 
 	return (
 		<form
@@ -111,7 +119,7 @@ export function Form() {
 								className="self-start"
 							/>
 						);
-					case "textarea":
+					case "message":
 						return (
 							<Textarea
 								key={field}
@@ -125,7 +133,7 @@ export function Form() {
 						);
 				}
 			})}
-			<Button type="submit" submit>
+			<Button type="submit" submit disabled={!isValidFixed}>
 				SEND
 			</Button>
 		</form>

@@ -39,7 +39,7 @@ export const Checkbox = forwardRef<CheckboxElement, CheckboxProps>(
 				className={clsx(componentClass)}
 				showError={!!errors}
 			>
-				<div className="flex items-center min-w-[259px]">
+				<div className="flex items-center min-w-[259px] md:min-w-[222px] md:w-[222px] xl:w-[290px]">
 					<label className="flex items-start gap-[8px] cursor-pointer">
 						<input
 							type="checkbox"

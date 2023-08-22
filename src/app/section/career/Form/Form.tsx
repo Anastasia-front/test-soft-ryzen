@@ -7,7 +7,7 @@ import { Textarea } from "@/app/components/Textarea/Textarea";
 import { useMemo } from "react";
 import type { SubmitHandler, UseFormRegisterReturn } from "react-hook-form";
 import { useForm } from "react-hook-form";
-// import { isObjectEmpty } from "../../../../../helpers/isObjectEmpty";
+import { isObjectEmpty } from "../../../../../helpers/isObjectEmpty";
 import { formList } from "./data/formList";
 import type { FormFields } from "./types/FormFields";
 
@@ -42,7 +42,7 @@ export function Form() {
 			email: "",
 			phone: "",
 			position: "",
-			textarea: "",
+			message: "",
 			consent: false,
 		},
 	});
@@ -94,14 +94,18 @@ export function Form() {
 				label: "Position",
 				placeholder: "Movie maker",
 				required: true,
-				register: () => register("position"),
+				register: () =>
+					register("position", {
+						required: "Incorrect position",
+						pattern: /^[a-zA-Z]/,
+					}),
 			},
-			textarea: {
-				type: "textarea",
-				name: "textarea",
+			message: {
+				type: "message",
+				name: "message",
 				label: "Message",
 				placeholder: "",
-				register: () => register("textarea"),
+				register: () => register("message"),
 			},
 			consent: {
 				type: "checkbox",
@@ -124,11 +128,20 @@ export function Form() {
 		reset();
 	};
 
-	// const isValidFixed = isObjectEmpty(errors);
+	const isValidFixed =
+		isObjectEmpty(errors) &&
+		formList.every((field) => {
+			const fieldData = formFieldsData[field];
+			if (fieldData.required) {
+				return !!watch(fieldData.name);
+			}
+			return true;
+		}) &&
+		watch("consent");
 
 	return (
 		<form
-			className="flex flex-col w-[100%] gap-[16px] justify-center items-center"
+			className="flex flex-col w-[100%] md:w-[60vw] xl:w-[45vw] gap-[16px] xl:gap-[24px] justify-center items-center sm:pl-[20px] md:pl-0"
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			{formList.map((field) => {
@@ -152,7 +165,7 @@ export function Form() {
 								}`}
 							/>
 						);
-					case "textarea":
+					case "message":
 						return (
 							<Textarea
 								key={field}
@@ -160,7 +173,7 @@ export function Form() {
 								register={formFieldsData[field].register()}
 								errors={errors}
 								disabled={formFieldsData[field].disabled}
-								className="self-start"
+								className="self-start md:ml-[250px] md:mt-[-272px] xl:ml-[314px] xl:mt-[-320px]"
 							/>
 						);
 
@@ -173,13 +186,18 @@ export function Form() {
 								errors={errors}
 								required={formFieldsData[field].required}
 								disabled={formFieldsData[field].disabled}
-								className="self-start"
+								className="self-start md:w-[222px] xl:w-[290px] md:pt-[16px] xl:pt-[12px]"
 								text={formFieldsData[field].text || ""}
 							/>
 						);
 				}
 			})}
-			<Button type="submit" submit disabled={!watchConsent}>
+			<Button
+				type="submit"
+				submit
+				disabled={!watchConsent || !isValidFixed}
+				className="md:mt-[-75px] md:ml-[420px] xl:mt-[-85px] xl:ml-[552px]"
+			>
 				SEND
 			</Button>
 		</form>

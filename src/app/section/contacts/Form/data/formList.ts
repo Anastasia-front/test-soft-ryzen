@@ -1,1 +1,1 @@
-export const formList: string[] = ["fullName", "email", "textarea"];
+export const formList: string[] = ["fullName", "email", "message"];

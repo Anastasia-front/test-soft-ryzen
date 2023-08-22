@@ -1,11 +1,17 @@
+"use client";
+
 import Section from "@/app/components/Section/Section";
-import { Form } from "./Form/Form";
+import { useScreenQuery } from "@/app/hooks/useScreenQuery";
+import MobileCareer from "./MobileCareer";
+import TabletAndDesktopCareer from "./TabletAndDesktopCareer";
 import s from "./styles.module.scss";
 
 export default function Career() {
+	const { isScreenTabletSm } = useScreenQuery();
+
 	return (
 		<Section className={s.bg} id="career">
-			<Form />
+			{!isScreenTabletSm ? <MobileCareer /> : <TabletAndDesktopCareer />}
 		</Section>
 	);
 }

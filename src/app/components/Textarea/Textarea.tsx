@@ -35,6 +35,25 @@ export const Textarea = forwardRef<TextareaElement, TextareaProps>(
 			disabled && "border-backgroundInput",
 		];
 
+		const textareaStyles = [
+			"max-w-[86vw]",
+			"h-[196px]",
+			"min-w-[280px]",
+			"md:max-w-[400px]",
+			"md:min-w-[222px]",
+			"md:h-[228px]",
+			"xl:h-[268px]",
+			"xl:min-w-[292px]",
+			"bg-input",
+			"py-[6px]",
+			"px-[8px]",
+			"font-200",
+			"text-20",
+			"leading-[24px]",
+			"placeholder:text-light2",
+			"hover:bg-light1",
+		].join(" ");
+
 		return (
 			<label className={className}>
 				<InputWrapper
@@ -46,7 +65,7 @@ export const Textarea = forwardRef<TextareaElement, TextareaProps>(
 					showError={!!errors}
 				>
 					<textarea
-						className="w-[93vw] h-[196px] min-w-[280px] md:min-w-[222px] md:h-[228px] xl:h-[292px] xl:min-w-[268px] bg-input py-[6px] pl-[8px] font-200 text-20 leading-[24px] placeholder:text-light2 hover:bg-light1"
+						className={textareaStyles}
 						placeholder={placeholder}
 						ref={ref}
 						{...register}

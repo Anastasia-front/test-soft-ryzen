@@ -3,6 +3,6 @@ export interface FormFields {
 	email: string;
 	position: string;
 	phone: string;
-	textarea: string;
+	message: string;
 	consent: boolean;
 }

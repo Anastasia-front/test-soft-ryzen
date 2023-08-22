@@ -29,24 +29,41 @@ export const TextInput = forwardRef<TextInputElement, TextInputProps>(
 		ref
 	) => {
 		const error = errors ? errors[register?.name]?.message?.toString() : "";
+		const errorMessages: Record<string, string> = {
+			fullName:
+				"Incorrect full name, it must contain name and surname only in Latin",
+			email: "Incorrect email, it must follow suit only in Latin",
+			position: "Incorrect position, it must has only Latin characters",
+			phone: "Incorrect phone, it must have min 10 numbers and start from zero",
+		};
+
+		// const errorMessages: Record<string, string> = {
+		// 	fullName: "Incorrect full name",
+		// 	email: "Incorrect email",
+		// 	position: "Incorrect position",
+		// 	phone: "Incorrect phone",
+		// };
+
 		const errorWithPattern =
 			errors &&
 			!isObjectEmpty(errors) &&
 			register?.name &&
 			errors[register.name]
-				? `Incorrect ${register.name}`
+				? (errorMessages[register.name] as keyof typeof errorMessages) ||
+				  "Unknown error"
 				: "";
 
 		const inputStyles = [
-			"w-[93vw]",
+			"max-w-[86vw]",
 			"h-[24px]",
 			"min-w-[280px]",
+			"md:max-w-[222px]",
 			"md:min-w-[222px]",
 			"xl:h-[28px]",
 			"xl:min-w-[290px]",
 			"bg-input",
 			"py-[6px]",
-			"pl-[8px]",
+			"px-[8px]",
 			"font-200",
 			"text-20",
 			"leading-[24px]",

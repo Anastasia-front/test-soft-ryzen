@@ -10,6 +10,7 @@ const config: Config = {
 		screens: {
 			sm: "400px",
 			md: "768px",
+			x: "1000px",
 			xl: "1280px",
 			xxl: "1440px",
 		},
