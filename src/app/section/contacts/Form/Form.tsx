@@ -122,18 +122,24 @@ export function Form() {
 					case "message":
 						return (
 							<Textarea
+								section="contacts"
 								key={field}
 								label={formFieldsData[field].label}
 								register={formFieldsData[field].register()}
 								errors={errors}
 								required={formFieldsData[field].required}
 								disabled={formFieldsData[field].disabled}
-								className="self-start md:min-w-[463px] md:h-[222px] xl:h-[174px] xl:min-w-[607px]"
+								className="self-start"
 							/>
 						);
 				}
 			})}
-			<Button type="submit" submit disabled={!isValidFixed}>
+			<Button
+				type="submit"
+				submit
+				disabled={!isValidFixed}
+				className="self-end"
+			>
 				SEND
 			</Button>
 		</form>

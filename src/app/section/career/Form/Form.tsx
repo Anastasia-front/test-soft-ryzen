@@ -168,12 +168,13 @@ export function Form() {
 					case "message":
 						return (
 							<Textarea
+								section="career"
 								key={field}
 								label={formFieldsData[field].label}
 								register={formFieldsData[field].register()}
 								errors={errors}
 								disabled={formFieldsData[field].disabled}
-								className="self-start md:ml-[250px] md:mt-[-272px] xl:ml-[314px] xl:mt-[-320px]"
+								className="self-start"
 							/>
 						);
 
@@ -186,7 +187,7 @@ export function Form() {
 								errors={errors}
 								required={formFieldsData[field].required}
 								disabled={formFieldsData[field].disabled}
-								className="self-start md:w-[222px] xl:w-[290px] md:pt-[16px] xl:pt-[12px]"
+								className="self-start md:w-[222px] xl:w-[290px]"
 								text={formFieldsData[field].text || ""}
 							/>
 						);

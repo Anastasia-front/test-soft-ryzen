@@ -22,7 +22,7 @@ export default function TabletAndDesktopCareer() {
 				<h2 className="self-left pl-[80px] xl:pl-[123px] text-30 xl:text-36 xl:leading-[39px] font-200 uppercase">
 					Why us ?
 				</h2>
-				<div className="flex gap-[20px] x:gap-[100px] xl:gap-[24px] ">
+				<div className="flex gap-[20px] l:gap-[100px] xl:gap-[24px] ">
 					{isScreenTabletSm && !isScreenTabletXl && (
 						<ul className="flex flex-col self-start gap-[24px] text-right leading-[20px] min-w-[222px] max-w-[277px]">
 							{whoUs.map((w) => (
