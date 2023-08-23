@@ -4,7 +4,7 @@ import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ButtonJoinNow() {
+export function ButtonJoinNow() {
 	const { isScreenTabletSm, isScreenTabletXl } = useScreenQuery();
 
 	const imageWidthClass = isScreenTabletXl ? 44 : isScreenTabletSm ? 35 : 42;

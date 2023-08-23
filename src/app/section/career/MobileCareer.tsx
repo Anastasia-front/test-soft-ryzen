@@ -1,7 +1,7 @@
 import { Form } from "./Form/Form";
 import { whoUs } from "./data/whoUs";
 
-export default function MobileCareer() {
+export function MobileCareer() {
 	return (
 		<div className="flex flex-col gap-[36px]">
 			<div className="flex flex-col gap-[24px]">

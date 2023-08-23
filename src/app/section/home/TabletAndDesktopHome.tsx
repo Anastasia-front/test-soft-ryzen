@@ -1,6 +1,6 @@
-import ButtonJoinNow from "@/app/components/Button/ButtonJoinNow/ButtonJoinNow";
+import { ButtonJoinNow } from "@/app/components/Button/ButtonJoinNow/ButtonJoinNow";
 
-export default function TabletAndDesktopHome() {
+export function TabletAndDesktopHome() {
 	return (
 		<div className="flex flex-col gap-[24px] xl:gap-[28px] pt-[50px] items-center">
 			<div className="flex justify-between w-full">

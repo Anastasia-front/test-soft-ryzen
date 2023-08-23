@@ -1,9 +1,11 @@
 "use client";
 
-import Section from "@/app/components/Section/Section";
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
-import MobileCareer from "./MobileCareer";
-import TabletAndDesktopCareer from "./TabletAndDesktopCareer";
+
+import { Section } from "@/app/components/Section/Section";
+import { MobileCareer } from "./MobileCareer";
+import { TabletAndDesktopCareer } from "./TabletAndDesktopCareer";
+
 import s from "./styles.module.scss";
 
 export default function Career() {

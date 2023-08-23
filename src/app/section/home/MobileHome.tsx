@@ -1,6 +1,6 @@
-import ButtonJoinNow from "@/app/components/Button/ButtonJoinNow/ButtonJoinNow";
+import { ButtonJoinNow } from "@/app/components/Button/ButtonJoinNow/ButtonJoinNow";
 
-export default function MobileHome() {
+export function MobileHome() {
 	return (
 		<div className="flex flex-col gap-[24px] pt-[50px] items-center">
 			<div className="text-37 uppercase self-end">

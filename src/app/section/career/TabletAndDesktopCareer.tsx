@@ -4,7 +4,7 @@ import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 import { Form } from "./Form/Form";
 import { whoUs } from "./data/whoUs";
 
-export default function TabletAndDesktopCareer() {
+export function TabletAndDesktopCareer() {
 	const { isScreenTabletSm, isScreenTabletXl } = useScreenQuery();
 
 	return (

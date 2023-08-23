@@ -2,10 +2,10 @@
 
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 import Image from "next/image";
-import BurgerMenu from "./BurgerMenu";
-import Navigation from "./Navigation";
+import { BurgerMenu } from "./BurgerMenu";
+import { Navigation } from "./Navigation";
 
-export default function Header(props: { className: string }) {
+export function Header(props: { className: string }) {
 	const { isScreenTabletSm } = useScreenQuery();
 
 	return (

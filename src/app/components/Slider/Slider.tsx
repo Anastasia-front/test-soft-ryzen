@@ -1,13 +1,17 @@
 "use client";
 
+import React, { useState } from "react";
+
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import React, { useState } from "react";
-import Slide from "./Slide";
-import s from "./Slider.module.scss";
+
+import { Slide } from "./Slide";
+
 import { content } from "./data/content";
 
-export default function Slider() {
+import s from "./Slider.module.scss";
+
+export function Slider() {
 	const [currentSlide, setCurrentSlide] = React.useState(0);
 	const [loaded, setLoaded] = useState(false);
 	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
