@@ -48,9 +48,16 @@ export function Form() {
 			consent: false,
 		},
 	});
-
 	const watchConsent = watch("consent");
 	const watchFields = watch(["fullName", "email", "phone", "position"]);
+
+	// const requiredFields = ["fullName", "email", "phone", "position"]
+
+	//  const isAnyFieldEmpty = (): boolean => {
+	// 	return Object.keys(formFieldsData).some(() => {
+	// 		return !watch(["fullName", "email", "phone", "position"]);
+	// 	});
+	// };
 
 	const formFieldsData: FormFieldsData = useMemo(
 		() => ({
@@ -62,7 +69,7 @@ export function Form() {
 				required: true,
 				register: () =>
 					register("fullName", {
-						required: "Incorrect name",
+						required: "This field is required",
 						pattern: /^[a-zA-Z]+\s[a-zA-Z]+$/,
 					}),
 			},
@@ -74,7 +81,7 @@ export function Form() {
 				required: true,
 				register: () =>
 					register("email", {
-						required: "Incorrect e-mail",
+						required: "This field is required",
 						pattern: /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,
 					}),
 			},
@@ -86,7 +93,7 @@ export function Form() {
 				required: true,
 				register: () =>
 					register("phone", {
-						required: "Incorrect phone",
+						required: "This field is required",
 						pattern:
 							/^(?:(?:\+380|0)[.-]?\d{2}[.-]?\d{2}[.-]?\d{2}[.-]?\d{3}|\d{10})$/,
 					}),
@@ -99,7 +106,7 @@ export function Form() {
 				required: true,
 				register: () =>
 					register("position", {
-						required: "Incorrect position",
+						required: "This field is required",
 						pattern: /^[a-zA-Z]/,
 					}),
 			},
@@ -163,6 +170,7 @@ export function Form() {
 										? "placeholder:first-line:text-white"
 										: ""
 								}`}
+								// isAnyFieldEmpty={isAnyFieldEmpty}
 							/>
 						);
 					case "message":
