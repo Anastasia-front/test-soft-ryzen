@@ -1,7 +1,5 @@
 import type { FieldErrors, FieldValues } from "react-hook-form";
 
-import clsx from "clsx";
-
 import type { InputWrapperCommonProps } from "../InputWrapper/InputWrapper";
 import { InputWrapper } from "../InputWrapper/InputWrapper";
 
@@ -31,11 +29,6 @@ export function Checkbox(
 	ref: React.ForwardedRef<HTMLInputElement>
 ) {
 	const error = errors ? errors[register?.name]?.message?.toString() : "";
-	const componentClass = [
-		error && "border-red",
-		disabled && "border-backgroundInput",
-		className,
-	];
 
 	return (
 		<InputWrapper
@@ -43,7 +36,6 @@ export function Checkbox(
 			error={error}
 			required={required}
 			disabled={disabled}
-			className={clsx(componentClass)}
 			showError={!!errors}
 		>
 			<div className="flex items-center min-w-[259px] md:min-w-[222px] md:w-[222px] xl:w-[290px]">

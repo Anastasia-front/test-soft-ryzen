@@ -12,7 +12,6 @@ export interface TextInputProps
 	errors?: FieldErrors<FieldValues>;
 	required?: boolean;
 	disabled?: boolean;
-	// isAnyFieldEmpty: boolean;
 }
 
 export const TextInput = forwardRef<TextInputElement, TextInputProps>(

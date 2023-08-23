@@ -56,15 +56,10 @@ const config: Config = {
 		backgroundColor: {
 			white: "#fff",
 			black: "rgba(0,0,0,0.9)",
-			overlay: "rgba(1, 10, 5, 0.75)",
+			overlay: "rgba(1, 10, 5, 0.92)",
 			unActiveImage: "rgba(9, 20, 16, 0.25)",
 			light1: "rgba(255, 255, 255, 0.1)",
 			input: "rgba(255, 255, 255, 0.05)",
-		},
-		border: {
-			red: "#FF5757",
-
-			backgroundInput: "rgba(255, 255, 255, 0.05)",
 		},
 	},
 	plugins: [],
