@@ -5,9 +5,11 @@ import { Section } from "@/app/components/Section/Section";
 import { content } from "./data/content";
 import { images } from "./data/images";
 
+import { SlideProps } from "./Slide";
+
 import s from "./Slider.module.scss";
 
-export function TabletServices({ number }: { number: number }) {
+export function TabletServices({ number, handleActivityClick }: SlideProps) {
 	const src = images[number];
 
 	return (
@@ -36,28 +38,7 @@ export function TabletServices({ number }: { number: number }) {
 					<div className="flex flex-col items-start content-between gap-[20px] justify-between">
 						<div className="flex flex-col gap-[25px]">
 							<ul className="flex flex-col gap-[16px] items-left uppercase text-22 text-light2 leading-[18px] max-w-[185px]">
-								{content[number].activity.map((a) => {
-									return (
-										<li
-											key={a.id}
-											className={
-												a.active
-													? "font-500 flex gap-[8px] text-white"
-													: "font-200"
-											}
-										>
-											{a.active && (
-												<Image
-													src="/svg/rhombus.svg"
-													alt="rhombus"
-													width={6}
-													height={6}
-												/>
-											)}
-											{a.name}
-										</li>
-									);
-								})}
+								{handleActivityClick()}
 							</ul>
 							<p className="self-right text-12 font-200 leading-[24px] tracking-[2.4px] sm:text-14">
 								{content[number].subtitle}

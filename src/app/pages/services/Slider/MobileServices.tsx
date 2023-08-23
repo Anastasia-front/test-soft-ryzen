@@ -5,9 +5,11 @@ import { Section } from "@/app/components/Section/Section";
 import { content } from "./data/content";
 import { images } from "./data/images";
 
+import { SlideProps } from "./Slide";
+
 import s from "./Slider.module.scss";
 
-export function MobileServices({ number }: { number: number }) {
+export function MobileServices({ number, handleActivityClick }: SlideProps) {
 	const src = images[number];
 
 	return (
@@ -35,27 +37,11 @@ export function MobileServices({ number }: { number: number }) {
 							{content[number].subtitle}
 						</p>
 					</div>
-					<ul className="flex flex-col gap-[16px] items-left uppercase text-20 text-light2 leading-[17px] max-w-[185px] sm:text-22 sm:leading-[26px] sm:max-w-[270px]">
-						{content[number].activity.map((a) => {
-							return (
-								<li
-									key={a.id}
-									className={
-										a.active ? "font-500 flex gap-[8px] text-white" : "font-200"
-									}
-								>
-									{a.active && (
-										<Image
-											src="/svg/rhombus.svg"
-											alt="rhombus"
-											width={6}
-											height={6}
-										/>
-									)}
-									{a.name}
-								</li>
-							);
-						})}
+					<ul
+						className="flex flex-col gap-[16px] items-left uppercase text-20 text-light2
+					leading-[17px] max-w-[185px] sm:text-22 sm:leading-[26px] sm:max-w-[270px]"
+					>
+						{handleActivityClick()}
 					</ul>
 				</div>
 				<h6 className="text-14 font-200 leading-[20px] max-w-[500px] sm:text-18">

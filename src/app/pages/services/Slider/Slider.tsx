@@ -1,12 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
+import Image from "next/image";
+
 import { Slide } from "./Slide";
 
+import { activities } from "./data/activities";
 import { content } from "./data/content";
 
 import s from "./Slider.module.scss";
@@ -23,6 +26,7 @@ export function Slider() {
 			setLoaded(true);
 		},
 	});
+
 	const bgClassNames: Record<number, string> = {
 		1: s.bg1,
 		2: s.bg2,
@@ -31,6 +35,49 @@ export function Slider() {
 		5: s.bg2,
 	};
 
+	const handleActivityClick = () => {
+		return (
+			loaded &&
+			instanceRef.current && (
+				<>
+					{activities.map((activity) => {
+						return (
+							<li
+								key={activity.id}
+								className={`${
+									currentSlide === activity.id - 1
+										? "font-500 text-white"
+										: "font-200"
+								}`}
+							>
+								<button
+									onClick={() => {
+										instanceRef.current?.moveToIdx(activity.id - 1);
+									}}
+									className="flex gap-[8px] items-center justify-start text-left"
+								>
+									{currentSlide === activity.id - 1 && (
+										<Image
+											src="/svg/rhombus.svg"
+											alt="rhombus"
+											width={6}
+											height={6}
+										/>
+									)}
+									{activity.name}
+								</button>
+							</li>
+						);
+					})}
+				</>
+			)
+		);
+	};
+
+	useEffect(() => {
+		handleActivityClick();
+	}, []);
+
 	return (
 		<div className={s.navigationWrapper}>
 			<div>
@@ -38,11 +85,11 @@ export function Slider() {
 					{content.map((number, index) => (
 						<div
 							key={index}
-							className={` keen-slider__slide bg-center bg-no-repeat bg-cover ${
+							className={`keen-slider__slide bg-center bg-no-repeat bg-cover ${
 								bgClassNames[number.id]
 							}`}
 						>
-							<Slide number={index} />
+							<Slide number={index} handleActivityClick={handleActivityClick} />
 						</div>
 					))}
 				</div>
