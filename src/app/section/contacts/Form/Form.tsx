@@ -1,11 +1,12 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import type { SubmitHandler, UseFormRegisterReturn } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
 import { Button } from "@/app/components/Button/Button";
 import { TextInput } from "@/app/components/Input/TextInput";
+import { ModalSubmit } from "@/app/components/Modal/ModalSubmit/ModalSubmit";
 import { Textarea } from "@/app/components/Textarea/Textarea";
 import { formList } from "./data/formList";
 import type { FormFields } from "./types/FormFields";
@@ -82,9 +83,17 @@ export function Form() {
 
 	const watchFields = watch(["fullName", "email"]);
 
+	const [open, setOpen] = useState(false);
+	const onOpenMenu = () => {
+		setOpen(true);
+	};
+	const onCloseMenu = () => {
+		setOpen(false);
+	};
+
 	const onSubmit: SubmitHandler<FormFields> = async (data: FormFields) => {
 		console.log(data);
-		alert("Your information was sent");
+		onOpenMenu();
 		reset();
 	};
 
@@ -128,6 +137,12 @@ export function Form() {
 			<Button type="submit" submit disabled={!watchFields} className="self-end">
 				SEND
 			</Button>
+			{open && (
+				<ModalSubmit
+					text="Your information was sent"
+					onCloseMenu={onCloseMenu}
+				/>
+			)}
 		</form>
 	);
 }

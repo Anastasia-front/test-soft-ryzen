@@ -1,18 +1,20 @@
 "use client";
-import { useState } from "react";
 import { ModalPortal } from "../ModalPortal/ModalPortal";
 
-export function ModalSubmit() {
-	const [open, setOpen] = useState(false);
-	const onOpenMenu = () => {
-		setOpen(true);
-	};
-	const onCloseMenu = () => {
-		setOpen(false);
-	};
+interface ModalSubmitProps {
+	text: string;
+	onCloseMenu: () => void;
+}
+
+export function ModalSubmit({ text, onCloseMenu }: ModalSubmitProps) {
 	return (
-		<ModalPortal onCloseMenu={onCloseMenu}>
-			<p>Your message was sent</p>
+		<ModalPortal onCloseMenu={onCloseMenu} className="bg-black">
+			<p
+				className="text-center text-20 md:text-30 xl:text-40 font-100 leading-[40px]
+			 md:leading-[81px] uppercase"
+			>
+				{text}
+			</p>
 		</ModalPortal>
 	);
 }

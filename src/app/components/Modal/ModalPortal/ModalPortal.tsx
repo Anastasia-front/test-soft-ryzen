@@ -1,11 +1,13 @@
 import { useKeyPress } from "@/app/hooks/useKeyPress";
 import ReactDOM from "react-dom";
+
 interface ModalProps {
+	className?: string;
 	children: React.ReactNode;
 	onCloseMenu: () => void;
 }
 
-export function ModalPortal({ onCloseMenu, children }: ModalProps) {
+export function ModalPortal({ onCloseMenu, className, children }: ModalProps) {
 	useKeyPress("Escape", onCloseMenu);
 
 	const portalContainerId = "modal-root";
@@ -15,9 +17,12 @@ export function ModalPortal({ onCloseMenu, children }: ModalProps) {
 		return null;
 	}
 
+	const bgOverlay = className ? className : "bg-overlay";
+
 	const modalContent = (
 		<div
-			className="bg-overlay fixed top-0 left-0 w-[100vw] h-[100vh] flex justify-center items-center z-50"
+			className={`fixed top-0 left-0 w-[100vw] h-[100vh]
+			flex justify-center items-center z-50 ${bgOverlay}`}
 			onClick={onCloseMenu}
 		>
 			<button

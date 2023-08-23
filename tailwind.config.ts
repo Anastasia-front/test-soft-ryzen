@@ -54,6 +54,7 @@ const config: Config = {
 			900: "900",
 		},
 		backgroundColor: {
+			black: "rgba(0,0,0,0.9)",
 			overlay: "rgba(1, 10, 5, 0.75)",
 			light1: "rgba(255, 255, 255, 0.1)",
 			input: "rgba(255, 255, 255, 0.05)",

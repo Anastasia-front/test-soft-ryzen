@@ -1,12 +1,15 @@
 "use client";
 
+import { useMemo, useState } from "react";
+import type { SubmitHandler, UseFormRegisterReturn } from "react-hook-form";
+import { useForm } from "react-hook-form";
+
 import { Button } from "@/app/components/Button/Button";
 import { Checkbox } from "@/app/components/Input/Checkbox/Checkbox";
 import { TextInput } from "@/app/components/Input/TextInput";
+import { ModalSubmit } from "@/app/components/Modal/ModalSubmit/ModalSubmit";
 import { Textarea } from "@/app/components/Textarea/Textarea";
-import { useMemo } from "react";
-import type { SubmitHandler, UseFormRegisterReturn } from "react-hook-form";
-import { useForm } from "react-hook-form";
+
 import { formList } from "./data/formList";
 import type { FormFields } from "./types/FormFields";
 
@@ -122,9 +125,17 @@ export function Form() {
 		[register]
 	);
 
+	const [open, setOpen] = useState(false);
+	const onOpenMenu = () => {
+		setOpen(true);
+	};
+	const onCloseMenu = () => {
+		setOpen(false);
+	};
+
 	const onSubmit: SubmitHandler<FormFields> = async (data: FormFields) => {
 		console.log(data);
-		alert("Your information was sent");
+		onOpenMenu();
 		reset();
 	};
 
@@ -190,6 +201,12 @@ export function Form() {
 			>
 				SEND
 			</Button>
+			{open && (
+				<ModalSubmit
+					text="Your information was sent"
+					onCloseMenu={onCloseMenu}
+				/>
+			)}
 		</form>
 	);
 }
