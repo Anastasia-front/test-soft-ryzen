@@ -30,7 +30,6 @@ export function MobileServices({ number }: { number: number }) {
 							alt={content[number].subtitle}
 							width={328}
 							height={244}
-							layout="responsive"
 						/>
 						<p className="self-right text-12 font-200 leading-[24px] tracking-[2.4px] sm:text-14">
 							{content[number].subtitle}

@@ -31,7 +31,6 @@ export function TabletServices({ number }: { number: number }) {
 						alt={content[number].subtitle}
 						width={463}
 						height={370}
-						layout="responsive"
 						className="h-auto min-w-[463px]"
 					/>
 					<div className="flex flex-col items-start content-between gap-[20px] justify-between">

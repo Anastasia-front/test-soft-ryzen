@@ -31,7 +31,6 @@ export function DesktopServices({ number }: { number: number }) {
 						alt={content[number].subtitle}
 						width={607}
 						height={429}
-						layout="responsive"
 						className=" max-w-[607px] h-auto"
 					/>
 					<div className="flex flex-col items-start content-between gap-[20px] justify-between min-w-[50%]">
