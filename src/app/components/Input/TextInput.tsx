@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import type { FieldErrors, FieldValues } from "react-hook-form";
 
-import { isObjectEmpty } from "../../../../helpers/isObjectEmpty";
+import { isObjectEmpty } from "../../helpers/isObjectEmpty";
 import { InputWrapper } from "./InputWrapper/InputWrapper";
 
 export type TextInputElement = HTMLInputElement;

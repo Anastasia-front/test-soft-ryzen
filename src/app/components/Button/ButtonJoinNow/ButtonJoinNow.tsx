@@ -7,6 +7,8 @@ import { Link } from "react-scroll";
 export function ButtonJoinNow() {
 	const { isScreenTabletSm, isScreenTabletXl } = useScreenQuery();
 
+	const offset = isScreenTabletXl ? 80 : isScreenTabletSm ? 60 : 10;
+
 	const imageWidthClass = isScreenTabletXl ? 44 : isScreenTabletSm ? 35 : 42;
 	const imageHeightClass = isScreenTabletXl ? 71 : isScreenTabletSm ? 50 : 53;
 
@@ -22,7 +24,7 @@ export function ButtonJoinNow() {
 			to="contacts"
 			spy={true}
 			smooth={true}
-			offset={10}
+			offset={offset}
 			duration={500}
 			className={`
 			uppercase font-700 text-18 leading-[48px] py-[16px] px-[64px]  h-[53px] flex items-center justify-center bg-light1 relative

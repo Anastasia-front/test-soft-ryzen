@@ -23,7 +23,7 @@ export function Header(props: { className: string }) {
 		<header
 			className={`w-[100vw] z-30 flex justify-between items-center px-[20px] pt-[36px] md:px-[32px] md:pt-[25px] xl:px-[24px] xl:pt-[48px] ${props.className}`}
 		>
-			<Image src="/Logo1.png" alt="logo" width={61} height={33} />
+			<Image src="/Logo.png" alt="logo" width={61} height={33} />
 			{isScreenTabletSm ? (
 				<Navigation onCloseMenu={onCloseMenu} />
 			) : (

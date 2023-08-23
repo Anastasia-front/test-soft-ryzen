@@ -1,4 +1,4 @@
-import { ButtonArrowUp } from "./components/Button/ButtonArrowUp/ArrowUpButton";
+import { ButtonArrowUp } from "./components/Button/ButtonArrowUp/ButtonArrowUp";
 import { Sections } from "./components/Sections/Sections";
 
 export default function App() {

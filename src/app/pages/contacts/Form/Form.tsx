@@ -8,6 +8,8 @@ import { Button } from "@/app/components/Button/Button";
 import { TextInput } from "@/app/components/Input/TextInput";
 import { ModalSubmit } from "@/app/components/Modal/ModalSubmit/ModalSubmit";
 import { Textarea } from "@/app/components/Textarea/Textarea";
+import { isObjectEmpty } from "@/app/helpers/isObjectEmpty";
+
 import { formList } from "./data/formList";
 import type { FormFields } from "./types/FormFields";
 
@@ -81,7 +83,10 @@ export function Form() {
 		[register]
 	);
 
-	const watchFields = watch(["fullName", "email"]);
+	const watchFullName = watch("fullName");
+	const watchEmail = watch("email");
+
+	const isValidFixed = isObjectEmpty(errors);
 
 	const [open, setOpen] = useState(false);
 	const onOpenMenu = () => {
@@ -136,7 +141,12 @@ export function Form() {
 						);
 				}
 			})}
-			<Button type="submit" submit disabled={!watchFields} className="self-end">
+			<Button
+				type="submit"
+				submit
+				disabled={!isValidFixed || !watchFullName || !watchEmail}
+				className="self-end"
+			>
 				SEND
 			</Button>
 			{open && (

@@ -1,4 +1,8 @@
+"use client";
+
 import { sections } from "../components/Header/data/sections";
+
+import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 
 import { Link } from "react-scroll";
 
@@ -7,6 +11,10 @@ interface NavigationProps {
 }
 
 export function Navigation({ onCloseMenu }: NavigationProps) {
+	const { isScreenTabletSm, isScreenTabletXl } = useScreenQuery();
+
+	const offset = isScreenTabletXl ? 80 : isScreenTabletSm ? 60 : 10;
+
 	return (
 		<nav>
 			<ul
@@ -20,7 +28,7 @@ export function Navigation({ onCloseMenu }: NavigationProps) {
 							to={s.href}
 							spy={true}
 							smooth={true}
-							offset={10}
+							offset={offset}
 							duration={500}
 							onClick={onCloseMenu}
 						>

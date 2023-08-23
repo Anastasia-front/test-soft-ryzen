@@ -14,6 +14,15 @@ export const ButtonArrowUp = forwardRef<ButtonElement, ButtonProps>(
 			setShowButton(window.scrollY > document.documentElement.clientHeight);
 		};
 
+		const handleScrollDown = () => {
+			const sectionContacts = document.getElementById("contacts");
+			if (sectionContacts) {
+				const sectionRect = sectionContacts.getBoundingClientRect();
+				const windowHeight = window.innerHeight;
+				setShowButton(sectionRect.top > windowHeight);
+			}
+		};
+
 		useEffect(() => {
 			const handleScroll = () => {
 				const getHelpSection = document.getElementById("about");
@@ -22,6 +31,8 @@ export const ButtonArrowUp = forwardRef<ButtonElement, ButtonProps>(
 					const windowHeight = window.innerHeight;
 
 					if (sectionRect.top <= windowHeight) {
+						handleScrollDown();
+					} else {
 						handleScrollUp();
 					}
 				}

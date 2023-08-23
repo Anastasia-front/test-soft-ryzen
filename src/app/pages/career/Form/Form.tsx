@@ -9,6 +9,7 @@ import { Checkbox } from "@/app/components/Input/Checkbox/Checkbox";
 import { TextInput } from "@/app/components/Input/TextInput";
 import { ModalSubmit } from "@/app/components/Modal/ModalSubmit/ModalSubmit";
 import { Textarea } from "@/app/components/Textarea/Textarea";
+import { isObjectEmpty } from "@/app/helpers/isObjectEmpty";
 
 import { formList } from "./data/formList";
 import type { FormFields } from "./types/FormFields";
@@ -49,15 +50,12 @@ export function Form() {
 		},
 	});
 	const watchConsent = watch("consent");
-	const watchFields = watch(["fullName", "email", "phone", "position"]);
+	const watchFullName = watch("fullName");
+	const watchEmail = watch("email");
+	const watchPosition = watch("position");
+	const watchPhone = watch("phone");
 
-	// const requiredFields = ["fullName", "email", "phone", "position"]
-
-	//  const isAnyFieldEmpty = (): boolean => {
-	// 	return Object.keys(formFieldsData).some(() => {
-	// 		return !watch(["fullName", "email", "phone", "position"]);
-	// 	});
-	// };
+	const isValidFixed = isObjectEmpty(errors);
 
 	const formFieldsData: FormFieldsData = useMemo(
 		() => ({
@@ -170,7 +168,6 @@ export function Form() {
 										? "placeholder:first-line:text-white"
 										: ""
 								}`}
-								// isAnyFieldEmpty={isAnyFieldEmpty}
 							/>
 						);
 					case "message":
@@ -204,7 +201,14 @@ export function Form() {
 			<Button
 				type="submit"
 				submit
-				disabled={!watchConsent || !watchFields}
+				disabled={
+					!watchConsent ||
+					!watchEmail ||
+					!watchFullName ||
+					!watchPhone ||
+					!watchPosition ||
+					!isValidFixed
+				}
 				className="md:mt-[-75px] md:ml-[420px] xl:mt-[-85px] xl:ml-[552px]"
 			>
 				SEND
