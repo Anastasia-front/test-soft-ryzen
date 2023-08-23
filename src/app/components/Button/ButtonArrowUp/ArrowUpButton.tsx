@@ -39,7 +39,11 @@ export const ButtonArrowUp = forwardRef<ButtonElement, ButtonProps>(
 					showButton ? "" : "hidden"
 				} bg-light1 p-[10px] `}
 				onClick={() => {
-					document.documentElement.scrollIntoView({ block: "start" });
+					document.documentElement.scrollIntoView({
+						block: "start",
+						behavior: "smooth",
+					});
+					setShowButton(false);
 				}}
 				ref={ref}
 				{...rest}
