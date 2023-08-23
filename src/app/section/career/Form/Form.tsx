@@ -7,7 +7,6 @@ import { Textarea } from "@/app/components/Textarea/Textarea";
 import { useMemo } from "react";
 import type { SubmitHandler, UseFormRegisterReturn } from "react-hook-form";
 import { useForm } from "react-hook-form";
-import { isObjectEmpty } from "../../../../../helpers/isObjectEmpty";
 import { formList } from "./data/formList";
 import type { FormFields } from "./types/FormFields";
 
@@ -48,6 +47,7 @@ export function Form() {
 	});
 
 	const watchConsent = watch("consent");
+	const watchFields = watch(["fullName", "email", "phone", "position"]);
 
 	const formFieldsData: FormFieldsData = useMemo(
 		() => ({
@@ -128,17 +128,6 @@ export function Form() {
 		reset();
 	};
 
-	const isValidFixed =
-		isObjectEmpty(errors) &&
-		formList.every((field) => {
-			const fieldData = formFieldsData[field];
-			if (fieldData.required) {
-				return !!watch(fieldData.name);
-			}
-			return true;
-		}) &&
-		watch("consent");
-
 	return (
 		<form
 			className="flex flex-col w-[100%] md:w-[60vw] xl:w-[45vw] gap-[16px] xl:gap-[24px] justify-center items-center sm:pl-[20px] md:pl-0"
@@ -196,7 +185,7 @@ export function Form() {
 			<Button
 				type="submit"
 				submit
-				disabled={!watchConsent || !isValidFixed}
+				disabled={!watchConsent || !watchFields}
 				className="md:mt-[-75px] md:ml-[420px] xl:mt-[-85px] xl:ml-[552px]"
 			>
 				SEND

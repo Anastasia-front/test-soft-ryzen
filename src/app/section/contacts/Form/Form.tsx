@@ -7,7 +7,6 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/app/components/Button/Button";
 import { TextInput } from "@/app/components/Input/TextInput";
 import { Textarea } from "@/app/components/Textarea/Textarea";
-import { isObjectEmpty } from "../../../../../helpers/isObjectEmpty";
 import { formList } from "./data/formList";
 import type { FormFields } from "./types/FormFields";
 
@@ -81,21 +80,13 @@ export function Form() {
 		[register]
 	);
 
+	const watchFields = watch(["fullName", "email"]);
+
 	const onSubmit: SubmitHandler<FormFields> = async (data: FormFields) => {
 		console.log(data);
 		alert("Your information was sent");
 		reset();
 	};
-
-	const isValidFixed =
-		isObjectEmpty(errors) &&
-		formList.every((field) => {
-			const fieldData = formFieldsData[field];
-			if (fieldData.required) {
-				return !!watch(fieldData.name);
-			}
-			return true;
-		});
 
 	return (
 		<form
@@ -134,12 +125,7 @@ export function Form() {
 						);
 				}
 			})}
-			<Button
-				type="submit"
-				submit
-				disabled={!isValidFixed}
-				className="self-end"
-			>
+			<Button type="submit" submit disabled={!watchFields} className="self-end">
 				SEND
 			</Button>
 		</form>
