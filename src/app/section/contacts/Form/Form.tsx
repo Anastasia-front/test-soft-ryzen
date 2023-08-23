@@ -116,7 +116,9 @@ export function Form() {
 								required={formFieldsData[field].required}
 								disabled={formFieldsData[field].disabled}
 								placeholder={formFieldsData[field].placeholder}
-								className="self-start"
+								className={`self-start ${
+									field === "email" && "xl:mt-[-72px] xl:ml-[315px]"
+								}`}
 							/>
 						);
 					case "message":

@@ -15,7 +15,7 @@ export default function Contacts() {
 					Contact<span className="font-500"> US</span>
 				</h1>
 				<div
-					className="self-end md:self-center xl:self-start w-full
+					className="self-end md:self-center  w-full
 			md:flex md:flex-col md:gap-[64px] xl:flex-row xl:gap-[230px]"
 				>
 					<ul
@@ -28,7 +28,7 @@ export default function Contacts() {
 								key={c.id}
 								className="flex gap-[20px] last:flex-row-reverse
 							xl:last:flex-row first:pr-0 last:pr-[15px] md:last:pr-[145px] pr-[46px]
-							xl:last:pt-[60px] xl:last:pr-[0px] xl:w-[300px]"
+							xl:last:pt-[60px] xl:last:pr-[28px] xl:w-[300px] xl:justify-end"
 							>
 								<ul>
 									{c.items.map((item) => (
@@ -43,7 +43,7 @@ export default function Contacts() {
 										</li>
 									))}
 								</ul>
-								<p className="text-12 text-left font-200 leading-[20px] ">
+								<p className="text-12 text-left font-200 leading-[20px] pt-[3px]">
 									{c.name}
 								</p>
 							</li>
