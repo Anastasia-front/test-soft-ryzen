@@ -2,26 +2,26 @@ export const sections = [
 	{
 		id: 1,
 		name: "About",
-		href: "#about",
+		href: "about",
 	},
 	{
 		id: 2,
 		name: "Services",
-		href: "#services",
+		href: "services",
 	},
 	{
 		id: 3,
 		name: "Career",
-		href: "#career",
+		href: "career",
 	},
 	{
 		id: 4,
 		name: "Gallery",
-		href: "#gallery",
+		href: "gallery",
 	},
 	{
 		id: 5,
 		name: "Contacts",
-		href: "#contacts",
+		href: "contacts",
 	},
 ];

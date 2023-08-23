@@ -1,25 +1,20 @@
-import { Section } from "@/app/components/Section/Section";
 import Image from "next/image";
-import { content } from "./data/content";
 
-import photo1 from "../../../../public/assets/content/section-3/1-2x.jpg";
-import photo2 from "../../../../public/assets/content/section-3/2-2x.jpg";
-import photo3 from "../../../../public/assets/content/section-3/3-2x.jpg";
-import photo4 from "../../../../public/assets/content/section-3/4-2x.jpg";
-import photo5 from "../../../../public/assets/content/section-3/5-2x.jpg";
+import { Section } from "@/app/components/Section/Section";
+
+import { content } from "./data/content";
+import { images } from "./data/images";
 
 import s from "./Slider.module.scss";
 
-const photos = [photo1, photo2, photo3, photo4, photo5];
-
-export function DesktopServices({ number }: { number: number }) {
-	const src = photos[number];
+export function TabletServices({ number }: { number: number }) {
+	const src = images[number];
 
 	return (
 		<Section className={s.bgOverlay} id="services">
-			<div className="flex flex-col w-full">
-				<div className="flex gap-[162px] text-98 ">
-					<h1 className="font-100 uppercase leading-normal tracking-[-3.92px] items-start">
+			<div className="flex flex-col  gap-[24px] w-full">
+				<div className="flex justify-between text-67 ">
+					<h1 className="font-100 uppercase leading-normal tracking-[-2.68px] items-start">
 						{content[number].titlePartThin}
 						<span className="font-500">{content[number].titlePartTBold}</span>
 					</h1>
@@ -34,14 +29,14 @@ export function DesktopServices({ number }: { number: number }) {
 					<Image
 						src={src}
 						alt={content[number].subtitle}
-						width={607}
-						height={429}
+						width={463}
+						height={370}
 						layout="responsive"
-						className=" max-w-[607px] h-auto"
+						className="h-auto min-w-[463px]"
 					/>
-					<div className="flex flex-col items-start content-between gap-[20px] justify-between min-w-[50%]">
-						<div className="flex gap-[60px]">
-							<ul className="flex flex-col gap-[24px] items-left uppercase text-28 text-light2 leading-[24px] max-w-[250px]">
+					<div className="flex flex-col items-start content-between gap-[20px] justify-between">
+						<div className="flex flex-col gap-[25px]">
+							<ul className="flex flex-col gap-[16px] items-left uppercase text-22 text-light2 leading-[18px] max-w-[185px]">
 								{content[number].activity.map((a) => {
 									return (
 										<li
@@ -70,7 +65,7 @@ export function DesktopServices({ number }: { number: number }) {
 							</p>
 						</div>
 
-						<h6 className="text-18 font-200 leading-[24px] max-w-[293px] text-justify self-end">
+						<h6 className="text-13 font-200 leading-[20px] max-w-[700px]">
 							{content[number].description}
 						</h6>
 					</div>

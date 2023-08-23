@@ -1,19 +1,14 @@
-import { Section } from "@/app/components/Section/Section";
 import Image from "next/image";
-import { content } from "./data/content";
 
-import photo1 from "../../../../public/assets/content/section-3/1-2x.jpg";
-import photo2 from "../../../../public/assets/content/section-3/2-2x.jpg";
-import photo3 from "../../../../public/assets/content/section-3/3-2x.jpg";
-import photo4 from "../../../../public/assets/content/section-3/4-2x.jpg";
-import photo5 from "../../../../public/assets/content/section-3/5-2x.jpg";
+import { Section } from "@/app/components/Section/Section";
+
+import { content } from "./data/content";
+import { images } from "./data/images";
 
 import s from "./Slider.module.scss";
 
-const photos = [photo1, photo2, photo3, photo4, photo5];
-
 export function MobileServices({ number }: { number: number }) {
-	const src = photos[number];
+	const src = images[number];
 
 	return (
 		<Section className={s.bgOverlay} id="services">

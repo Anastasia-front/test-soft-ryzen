@@ -2,7 +2,7 @@
 
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-scroll";
 
 export function ButtonJoinNow() {
 	const { isScreenTabletSm, isScreenTabletXl } = useScreenQuery();
@@ -18,7 +18,12 @@ export function ButtonJoinNow() {
 
 	return (
 		<Link
-			href="#contacts"
+			activeClass="active"
+			to="contacts"
+			spy={true}
+			smooth={true}
+			offset={10}
+			duration={500}
 			className={`
 			uppercase font-700 text-18 leading-[48px] py-[16px] px-[64px]  h-[53px] flex items-center justify-center bg-light1 relative
         ${isScreenTabletXl ? " text-32 h-[71px]" : ""}

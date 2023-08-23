@@ -1,7 +1,10 @@
 "use client";
+
 import { useState } from "react";
+
+import { Navigation } from "@/app/pages/Navigation";
+
 import { ModalPortal } from "../Modal/ModalPortal/ModalPortal";
-import { Navigation } from "./Navigation";
 
 export function BurgerMenu() {
 	const [open, setOpen] = useState(false);
@@ -21,7 +24,7 @@ export function BurgerMenu() {
 		</button>
 	) : (
 		<ModalPortal onCloseMenu={onCloseMenu}>
-			<Navigation />
+			<Navigation onCloseMenu={onCloseMenu} />
 		</ModalPortal>
 	);
 }

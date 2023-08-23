@@ -1,9 +1,12 @@
 "use client";
 
-import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 import Image from "next/image";
+
+import { useScreenQuery } from "@/app/hooks/useScreenQuery";
+
+import { Navigation } from "@/app/pages/Navigation";
+
 import { BurgerMenu } from "./BurgerMenu";
-import { Navigation } from "./Navigation";
 
 export function Header(props: { className: string }) {
 	const { isScreenTabletSm } = useScreenQuery();

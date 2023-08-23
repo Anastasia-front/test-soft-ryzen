@@ -1,4 +1,4 @@
-import { Slider } from "@/app/components/Slider/Slider";
+import { Slider } from "./Slider/Slider";
 
 export default function Services() {
 	return <Slider />;
