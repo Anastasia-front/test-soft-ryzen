@@ -17,6 +17,16 @@ interface Field {
 	type: string;
 	name: string;
 	label?: string;
+	inputMode?:
+		| "text"
+		| "email"
+		| "tel"
+		| "search"
+		| "none"
+		| "url"
+		| "numeric"
+		| "decimal"
+		| undefined;
 	placeholder?: string;
 	required?: boolean;
 	disabled?: boolean;
@@ -50,6 +60,7 @@ export function Form() {
 		() => ({
 			fullName: {
 				type: "text",
+				inputMode: "text",
 				name: "fullName",
 				label: "Full name",
 				placeholder: "John Smith",
@@ -62,6 +73,7 @@ export function Form() {
 			},
 			email: {
 				type: "text",
+				inputMode: "email",
 				name: "email",
 				label: "E-mail",
 				placeholder: "johnsmith@email.com",
@@ -74,6 +86,7 @@ export function Form() {
 			},
 			message: {
 				type: "message",
+				inputMode: "text",
 				name: "message",
 				label: "Message",
 				placeholder: "",

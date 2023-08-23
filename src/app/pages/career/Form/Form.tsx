@@ -18,6 +18,16 @@ interface Field {
 	type: string;
 	name: string;
 	label?: string;
+	inputMode?:
+		| "text"
+		| "email"
+		| "tel"
+		| "search"
+		| "none"
+		| "url"
+		| "numeric"
+		| "decimal"
+		| undefined;
 	placeholder?: string;
 	required?: boolean;
 	disabled?: boolean;
@@ -61,6 +71,7 @@ export function Form() {
 		() => ({
 			fullName: {
 				type: "text",
+				inputMode: "text",
 				name: "fullName",
 				label: "Full name",
 				placeholder: "John Smith",
@@ -73,6 +84,7 @@ export function Form() {
 			},
 			email: {
 				type: "text",
+				inputMode: "email",
 				name: "email",
 				label: "E-mail",
 				placeholder: "johnsmith@email.com",
@@ -85,6 +97,7 @@ export function Form() {
 			},
 			phone: {
 				type: "text",
+				inputMode: "tel",
 				name: "phone",
 				label: "Phone",
 				placeholder: "+38 (097) 12 34 567",
@@ -98,6 +111,7 @@ export function Form() {
 			},
 			position: {
 				type: "text",
+				inputMode: "text",
 				name: "position",
 				label: "Position",
 				placeholder: "Movie maker",
@@ -110,6 +124,7 @@ export function Form() {
 			},
 			message: {
 				type: "message",
+				inputMode: "text",
 				name: "message",
 				label: "Message",
 				placeholder: "",
@@ -175,6 +190,7 @@ export function Form() {
 							<Textarea
 								section="career"
 								key={field}
+								inputMode={formFieldsData[field].inputMode}
 								label={formFieldsData[field].label}
 								register={formFieldsData[field].register()}
 								errors={errors}

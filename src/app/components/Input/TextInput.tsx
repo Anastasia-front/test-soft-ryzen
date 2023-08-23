@@ -56,7 +56,7 @@ export const TextInput = forwardRef<TextInputElement, TextInputProps>(
 
 		const inputStyles = [
 			"max-w-[86vw]",
-			"h-[24px]",
+			"h-[28px]",
 			"min-w-[280px]",
 			"md:max-w-[222px]",
 			"md:min-w-[222px]",
