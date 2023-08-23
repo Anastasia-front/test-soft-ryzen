@@ -24,6 +24,7 @@ export function Textarea(
 		errors,
 		placeholder,
 		className,
+		inputMode,
 		...rest
 	}: TextareaProps,
 	ref: React.ForwardedRef<TextareaElement>
@@ -79,6 +80,7 @@ export function Textarea(
 				showError={!!errors}
 			>
 				<textarea
+					inputMode={inputMode}
 					className={textareaStyles}
 					placeholder={placeholder}
 					ref={ref}

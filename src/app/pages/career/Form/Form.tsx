@@ -172,6 +172,7 @@ export function Form() {
 						return (
 							<TextInput
 								key={field}
+								inputMode={formFieldsData[field].inputMode}
 								label={formFieldsData[field].label}
 								register={formFieldsData[field].register()}
 								errors={errors}

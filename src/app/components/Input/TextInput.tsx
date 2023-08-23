@@ -25,6 +25,7 @@ export const TextInput = forwardRef<TextInputElement, TextInputProps>(
 			errors,
 			placeholder,
 			className,
+			inputMode,
 			...rest
 		},
 		ref
@@ -88,6 +89,7 @@ export const TextInput = forwardRef<TextInputElement, TextInputProps>(
 				>
 					<input
 						type="text"
+						inputMode={inputMode}
 						className={inputStyles}
 						placeholder={placeholder}
 						ref={ref}
