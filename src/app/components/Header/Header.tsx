@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 
-import { Navigation } from "@/app/pages/Navigation";
+import { Navigation } from "@/app/components/Header/Navigation";
 
 import { BurgerMenu } from "./BurgerMenu";
 

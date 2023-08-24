@@ -1,6 +1,6 @@
 "use client";
 
-import { sections } from "../components/Header/data/sections";
+import { sections } from "./data/sections";
 
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 
