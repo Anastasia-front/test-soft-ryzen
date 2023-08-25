@@ -34,6 +34,7 @@ export default function Contacts() {
 									{c.items.map((item) => (
 										<li key={item.id}>
 											<a
+												rel="noopener noreferrer nofollow"
 												target="_blank"
 												href={item.href ? item.href : item.type + item.value}
 												className="font-400 leading-[24px] text-14 sm:text-16 l:tex-18 "
