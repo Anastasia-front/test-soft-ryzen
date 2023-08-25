@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { forwardRef, useEffect, useState } from "react";
+import { Button } from "../Button";
 
 type ButtonElement = HTMLElementTagNameMap["button"];
 type ButtonProps = React.HTMLAttributes<ButtonElement>;
@@ -45,7 +46,7 @@ export const ButtonArrowUp = forwardRef<ButtonElement, ButtonProps>(
 		}, []);
 
 		return (
-			<button
+			<Button
 				className={` ${className} ${
 					showButton ? "" : "hidden"
 				} bg-light1 p-[10px] `}
@@ -60,7 +61,7 @@ export const ButtonArrowUp = forwardRef<ButtonElement, ButtonProps>(
 				{...rest}
 			>
 				<Image src="/svg/arrow-up.svg" alt="arrow up" width={30} height={30} />
-			</button>
+			</Button>
 		);
 	}
 );

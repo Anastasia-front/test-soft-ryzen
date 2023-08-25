@@ -16,10 +16,10 @@ export function TabletServices({ number, handleActivityClick }: SlideProps) {
 		<Section className={s.bgOverlay} id="services">
 			<div className="flex flex-col  gap-[24px] w-full">
 				<div className="flex justify-between text-67 ">
-					<h1 className="font-100 uppercase leading-normal tracking-[-2.68px] items-start">
+					<h2 className="font-100 uppercase leading-normal tracking-[-2.68px] items-start">
 						{content[number].titlePartThin}
 						<span className="font-500">{content[number].titlePartTBold}</span>
-					</h1>
+					</h2>
 					<p className=" self-right font-100">
 						{content[number].currentNumber}
 						<span className="text-light2">

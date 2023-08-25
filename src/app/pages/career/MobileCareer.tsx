@@ -5,9 +5,9 @@ export function MobileCareer() {
 	return (
 		<div className="flex flex-col gap-[36px]">
 			<div className="flex flex-col gap-[24px]">
-				<h1 className="self-start text-40 font-100 leading-[56px] md:leading-[81px] tracking-[-1.6px] uppercase">
+				<h2 className="self-start text-40 font-100 leading-[56px] md:leading-[81px] tracking-[-1.6px] uppercase">
 					choose <span className="font-500">us</span>
-				</h1>
+				</h2>
 				<p className="self-end text-left text-14 font-200 leading-[20px] max-w-[179px] sm:max-w-[250px]">
 					Your chance to join our passionate team in Carpathian tourism. Seeking
 					talented professionals to share our common mission.
@@ -15,9 +15,9 @@ export function MobileCareer() {
 			</div>
 
 			<div className="flex flex-col gap-[36px]">
-				<h2 className="self-center pl-[50px] text-30 font-200 uppercase">
+				<h3 className="self-center pl-[50px] text-30 font-200 uppercase">
 					Why us ?
-				</h2>
+				</h3>
 				<ul className="flex flex-col self-start gap-[16px] text-right max-w-[180px] sm:max-w-[350px] ">
 					{whoUs.map((w) => (
 						<li key={w.id} className="flex flex-col items-end gap-[8px]">

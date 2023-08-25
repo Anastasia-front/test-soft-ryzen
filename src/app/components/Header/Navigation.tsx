@@ -25,6 +25,7 @@ export function Navigation({ onCloseMenu }: NavigationProps) {
 					<li key={s.id}>
 						<Link
 							activeClass="active"
+							href="/"
 							to={s.href}
 							spy={true}
 							smooth={true}

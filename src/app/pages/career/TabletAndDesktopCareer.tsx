@@ -10,18 +10,18 @@ export function TabletAndDesktopCareer() {
 	return (
 		<div className="flex flex-col gap-[12px]">
 			<div className="flex gap-[24px] justify-between items-center">
-				<h1 className="text-67 xl:text-98 font-100 leading-[56px] md:leading-[81px] xl:leading-normal tracking-[-2.68px] xl:tracking-[-3.92px] uppercase">
+				<h2 className="text-67 xl:text-98 font-100 leading-[56px] md:leading-[81px] xl:leading-normal tracking-[-2.68px] xl:tracking-[-3.92px] uppercase">
 					choose <span className="font-500">us</span>
-				</h1>
+				</h2>
 				<p className="text-left xl:text-justify text-13 xl:text-18 font-200 leading-[20px] xl:leading-[24px] max-w-[222px] xl:max-w-[293px]">
 					Your chance to join our passionate team in Carpathian tourism. Seeking
 					talented professionals to share our common mission.
 				</p>
 			</div>
 			<div className="flex flex-col gap-[56px] xl:gap-[45px]">
-				<h2 className="self-left pl-[80px] xl:pl-[123px] text-30 xl:text-36 xl:leading-[39px] font-200 uppercase">
+				<h3 className="self-left pl-[80px] xl:pl-[123px] text-30 xl:text-36 xl:leading-[39px] font-200 uppercase">
 					Why us ?
-				</h2>
+				</h3>
 				<div className="flex gap-[20px] l:gap-[100px] xl:gap-[24px] ">
 					{isScreenTabletSm && !isScreenTabletXl && (
 						<ul className="flex flex-col self-start gap-[24px] text-right leading-[20px] min-w-[222px] max-w-[277px]">

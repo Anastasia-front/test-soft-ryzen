@@ -8,18 +8,25 @@ body {
 	scroll-behavior: smooth;
 	user-select: none;
 }
+
 li {
 	list-style: none;
 }
+
 a {
 	text-decoration: none;
 	margin: 0;
 	padding: 0;
 	cursor: pointer;
 }
+
 a:hover,
 button:hover {
 	text-shadow: 1px 0 10px #fff;
+}
+
+#buttonJoinUs:hover {
+	text-shadow: none;
 }
 
 button:disabled:hover {
@@ -29,10 +36,12 @@ button:disabled:hover {
 button {
 	cursor: pointer;
 }
+
 img {
 	display: block;
 	margin: 0;
 }
+
 h1,
 h2,
 h3,
@@ -43,4 +52,12 @@ p,
 ul {
 	margin: 0;
 	padding: 0;
+}
+
+:active,
+:hover,
+:focus {
+	outline: 0;
+	outline-offset: 0;
+	transition: all 0.3s ease;
 }

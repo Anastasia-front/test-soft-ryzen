@@ -16,10 +16,10 @@ export function MobileServices({ number, handleActivityClick }: SlideProps) {
 		<Section className={s.bgOverlay} id="services">
 			<div className="min-h-[739px] flex flex-col justify-between items-center gap-[50px]">
 				<div className="flex flex-col gap-[24px] w-full">
-					<h1 className="text-40 font-100 uppercase leading-[56px] tracking-[-1.6px] items-start">
+					<h2 className="text-40 font-100 uppercase leading-[56px] tracking-[-1.6px] items-start">
 						{content[number].titlePartThin}
 						<span className="font-500">{content[number].titlePartTBold}</span>
-					</h1>
+					</h2>
 					<div className="flex flex-col items-end gap-[16px]">
 						<p className=" self-right text-43 font-100 mr-[30px]">
 							{content[number].currentNumber}

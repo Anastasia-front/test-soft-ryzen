@@ -8,12 +8,12 @@ export default function Contacts() {
 	return (
 		<Section className={s.bg} id="contacts">
 			<div className="flex flex-col gap-[36px] xl:gap-[71px]">
-				<h1
+				<h2
 					className="uppercase font-100 text-40 md:text-67 xl:text-98  leading-[56px] md:leading-[66px]
 			tracking-[-1.6px] md:tracking-[-2.68px] xl:tracking-[-3.92px]"
 				>
 					Contact<span className="font-500"> US</span>
-				</h1>
+				</h2>
 				<div
 					className="self-end md:self-center  w-full
 			md:flex md:flex-col md:gap-[64px] xl:flex-row xl:gap-[230px]"

@@ -16,10 +16,10 @@ export function DesktopServices({ number, handleActivityClick }: SlideProps) {
 		<Section className={s.bgOverlay} id="services">
 			<div className="flex flex-col w-full">
 				<div className="flex gap-[162px] text-98 ">
-					<h1 className="font-100 uppercase leading-normal tracking-[-3.92px] items-start">
+					<h2 className="font-100 uppercase leading-normal tracking-[-3.92px] items-start">
 						{content[number].titlePartThin}
 						<span className="font-500">{content[number].titlePartTBold}</span>
-					</h1>
+					</h2>
 					<p className=" self-right font-100">
 						{content[number].currentNumber}
 						<span className="text-light2">

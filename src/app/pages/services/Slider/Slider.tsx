@@ -7,6 +7,8 @@ import { useKeenSlider } from "keen-slider/react";
 
 import Image from "next/image";
 
+import { Button } from "@/app/components/Button/Button";
+
 import { Slide } from "./Slide";
 
 import { activities } from "./data/activities";
@@ -50,7 +52,7 @@ export function Slider() {
 										: "font-200"
 								}`}
 							>
-								<button
+								<Button
 									onClick={() => {
 										instanceRef.current?.moveToIdx(activity.id - 1);
 									}}
@@ -65,7 +67,7 @@ export function Slider() {
 										/>
 									)}
 									{activity.name}
-								</button>
+								</Button>
 							</li>
 						);
 					})}
@@ -121,7 +123,7 @@ export function Slider() {
 						...Array(instanceRef.current.track.details.slides.length).keys(),
 					].map((idx) => {
 						return (
-							<button
+							<Button
 								key={idx}
 								onClick={() => {
 									instanceRef.current?.moveToIdx(idx);
@@ -129,7 +131,7 @@ export function Slider() {
 								className={
 									`${s.dot}` + (currentSlide === idx ? ` ${s.active}` : "")
 								}
-							></button>
+							></Button>
 						);
 					})}
 				</div>

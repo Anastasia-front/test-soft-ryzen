@@ -5,12 +5,12 @@ import s from "./styles.module.scss";
 export default function About() {
 	return (
 		<Section className={s.bg} id="about">
-			<h1
+			<h2
 				className="text-40 md:text-67 xl:text-98 font-100 leading-[40px] md:leading-[81px]
 			pb-[8px] md:pb-0 tracking-[-1.6px] md:tracking-[-2.68px] xl:tracking-[-3.92px] uppercase"
 			>
 				WHO <span className="font-500">WE ARE</span>
-			</h1>
+			</h2>
 			<div className="flex flex-col gap-[40px] leading-[20px] xl:leading-[24px] xl:w-[920px]">
 				<div
 					className="flex flex-col self-start md:self-end gap-[20px] md:gap-[16px] text-14

@@ -20,14 +20,17 @@ export function ButtonJoinNow() {
 
 	return (
 		<Link
+			id="buttonJoinUs"
 			activeClass="active"
+			href="/"
 			to="contacts"
 			spy={true}
 			smooth={true}
 			offset={offset}
 			duration={500}
 			className={`
-			uppercase font-700 text-18 leading-[48px] py-[16px] px-[64px]  h-[53px] flex items-center justify-center bg-light1 relative
+			uppercase font-700 text-18 leading-[48px] py-[16px] px-[64px]  h-[53px] flex items-center
+			justify-center bg-light1 relative hover:bg-light2
         ${isScreenTabletXl ? " text-32 h-[71px]" : ""}
         ${isScreenTabletSm ? " text-18" : ""}
       `}
