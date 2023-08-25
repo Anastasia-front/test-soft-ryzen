@@ -24,11 +24,11 @@ export function MobileGallery() {
 			style={{ height: 650, width: "100%" }}
 		>
 			<ul className="h-full">
-				{images.map((image, index) => (
-					<li key={index}>
+				{images.map((image) => (
+					<li key={image.id}>
 						<Image
-							src={image}
-							alt={`photo${index}`}
+							src={image.src}
+							alt={image.alt}
 							className="keen-slider__slide "
 							width={280}
 							height={187}
