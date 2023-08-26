@@ -1,25 +1,23 @@
 import { type ReactNode } from "react";
 
+import { StaticImageData } from "next/image";
+
 import type { MotionProps } from "framer-motion";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useHandleDrag } from "@/app/hooks/useHandleDrag";
 
-interface CardData {
-	src: string;
-	title?: string;
-	text?: string;
-	index?: number;
+import { images } from "../../../data/images";
+
+export interface CardData {
+	src: StaticImageData;
+	alt: string;
+	id?: number;
 }
 
 interface SliderProps {
 	className: string;
-	renderContent: (
-		src: string,
-		title?: string,
-		text?: string,
-		index?: number
-	) => ReactNode;
+	renderContent: (card: CardData) => ReactNode;
 	animate: MotionProps;
 	screens?: Record<string, boolean>;
 	paginate: (dir: number) => void;
@@ -36,13 +34,15 @@ export function Carousel3d({
 	direction,
 	visibleIndices,
 }: SliderProps) {
-	const getImageIndex = (item: string) => {
-		switch (item) {
-			case visibleIndices[0].src:
+	const getImageIndex = (item: StaticImageData) => {
+		const altOfItem = images.find((image) => image.src === item)?.alt;
+
+		switch (altOfItem) {
+			case visibleIndices[0].alt:
 				return "left";
-			case visibleIndices[1].src:
+			case visibleIndices[1].alt:
 				return "center";
-			case visibleIndices[2].src:
+			case visibleIndices[2].alt:
 				return "right";
 			default:
 				return "right";
@@ -58,10 +58,10 @@ export function Carousel3d({
 		<div className={className}>
 			<AnimatePresence mode="popLayout" custom={direction} initial={false}>
 				{visibleIndices.map((card) => {
-					const { src, title, text, index } = card;
+					const { src, alt, id } = card;
 					return (
 						<motion.div
-							key={src}
+							key={id}
 							className={`flex items-center justify-center ${
 								getImageIndex(src) === "left" ||
 								(getImageIndex(src) === "right" && "bg-unActiveImage")
@@ -76,7 +76,7 @@ export function Carousel3d({
 							onDragStart={handleDragStart}
 							onDragEnd={handleDragEnd}
 						>
-							{renderContent(src, title, text, index)}
+							{renderContent(card)}
 						</motion.div>
 					);
 				})}

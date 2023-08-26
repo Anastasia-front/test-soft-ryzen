@@ -6,10 +6,9 @@ import type { MotionProps } from "framer-motion";
 import Image from "next/image";
 
 import { Button } from "@/app/components/Button/Button";
-import { images } from "../../data/images";
-import { Carousel3d } from "./Carousel3d/Carousel3d";
-
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
+import { images } from "../../data/images";
+import { CardData, Carousel3d } from "./Carousel3d/Carousel3d";
 
 const animationDuration = 0.5;
 
@@ -124,21 +123,23 @@ export function TabletAndDesktopGallery() {
 		<div className="flex relative flex-col items-center w-full md:h-[318px] xl:h-[492px] overflow-hidden">
 			<Carousel3d
 				className="flex gap-[24px] h-full"
-				renderContent={(src, index) => (
+				renderContent={(card: CardData) => (
 					<div
 						className={`flex items-center justify-center h-full w-full cursor-grab ${
-							typeof index === "number" && index !== activeIndex
+							typeof card.id === "number" && card.id !== activeIndex
 								? "bg-unActiveImage"
 								: ""
 						}`}
 					>
 						<Image
 							className="w-full h-full"
-							src={src}
-							alt={src}
+							src={card.src}
+							alt={card.alt}
 							width={286}
 							height={346}
 							style={{ objectFit: "cover" }}
+							draggable="false"
+							onMouseDown={(e) => e.preventDefault()}
 						/>
 					</div>
 				)}
