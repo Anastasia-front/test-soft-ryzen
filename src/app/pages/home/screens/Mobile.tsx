@@ -20,14 +20,14 @@ export function Mobile() {
 					{text.duration.journey}
 				</p>
 			</div>
-			<h1 className="uppercase self-start text-40 font-100 leading-[56px] tracking-[-1.6px] w-[280px] sm:text-center sm:self-center ">
+			<h1 className="uppercase self-start text-40 font-100 leading-[56px] tracking-[-1.6px] w-[280px]">
 				<span className="font-500">{text.title.boldText}</span>{" "}
 				{text.title.thinText}
 			</h1>
-			<h6 className="font-200 text-10 leading-[16px] w-[157px] self-start sm:self-center xl:self-end">
+			<h6 className="font-200 text-10 leading-[16px] w-[157px] self-start xl:self-end">
 				{text.places}
 			</h6>
-			<h4 className="font-200 text-14 leading-[20px] max-w-[345px] sm:text-center">
+			<h4 className="self-start font-200 text-14 leading-[20px] max-w-[345px]">
 				{text.subtitle}
 			</h4>
 			<ButtonJoinNow />

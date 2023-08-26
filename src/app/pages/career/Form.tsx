@@ -147,7 +147,7 @@ export function Form() {
 
 	return (
 		<form
-			className="flex flex-col w-[100%] md:w-[60vw] xl:w-[45vw] gap-[16px] xl:gap-[24px] justify-center items-center sm:pl-[20px] md:pl-0"
+			className="flex flex-col gap-[16px] xl:gap-[24px] xl:w-[605px] justify-center items-center relative"
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			{formList.map((field: string) => {
@@ -195,7 +195,7 @@ export function Form() {
 								errors={errors}
 								required={formFieldsData[field].required}
 								disabled={formFieldsData[field].disabled}
-								className="self-start md:w-[222px] xl:w-[290px]"
+								className="self-start"
 								text={formFieldsData[field].text || ""}
 							/>
 						);
@@ -212,7 +212,7 @@ export function Form() {
 					!watchPosition ||
 					!isValidFixed
 				}
-				className="md:mt-[-75px] md:ml-[420px] xl:mt-[-85px] xl:ml-[552px] uppercase"
+				className="md:absolute md:right-0 md:bottom-[10px] xl:bottom-[-12px] uppercase"
 			>
 				{button}
 			</Button>

@@ -38,27 +38,14 @@ export function Textarea(
 
 	const sizeInSections =
 		section === "contacts"
-			? [
-					"md:min-w-[60vw]",
-					"l:min-w-[70vw]",
-					"md:h-[222px]",
-					"xl:h-[174px]",
-					"xl:min-w-[607px]",
-			  ]
-			: [
-					"md:max-w-[400px]",
-					"md:min-w-[222px]",
-					"md:h-[228px]",
-					"xl:h-[268px]",
-					"xl:min-w-[292px]",
-			  ];
+			? ["md:h-[222px]", "xl:h-[174px]", "md:w-[463px]", "xl:w-[607px]"]
+			: ["md:h-[228px]", "xl:h-[268px]", "md:w-[222px]", "xl:w-[292px]"];
 
 	const textareaStyles = [
 		...sizeInSections,
-		"xl:min-w-[292px]",
-		"max-w-[86vw]",
+
 		"h-[196px]",
-		"min-w-[280px]",
+		"w-[280px]",
 		"bg-input",
 		"py-[6px]",
 		"px-[8px]",

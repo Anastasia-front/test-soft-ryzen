@@ -1,3 +1,5 @@
+import { Container } from "../Container/Container";
+
 interface SectionProps {
 	children: React.ReactNode;
 	className?: string;
@@ -7,10 +9,11 @@ interface SectionProps {
 export function Section({ children, className, id }: SectionProps) {
 	return (
 		<section
-			className={`px-[20px] py-[54px] md:px-[32px] md:py-[64px] xl:px-[24px] xl:py-[90px] xxl:px-[104px] bg-center bg-no-repeat bg-cover ${className}`}
+			className={`px-[20px] py-[54px] md:px-[32px] md:py-[64px] xl:px-[24px] xl:py-[90px] xxl:px-[104px]
+			bg-center bg-no-repeat bg-cover ${className}`}
 			id={id}
 		>
-			{children}
+			<Container>{children}</Container>
 		</section>
 	);
 }

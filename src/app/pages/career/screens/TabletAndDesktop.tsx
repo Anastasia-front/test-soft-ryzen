@@ -24,11 +24,11 @@ export function TabletAndDesktop() {
 					{text.chance}
 				</p>
 			</div>
-			<div className="flex flex-col gap-[56px] xl:gap-[45px]">
+			<div className="flex flex-col gap-[56px] xl:gap-[45px] xl:pb-[20px]">
 				<h3 className="self-left pl-[80px] xl:pl-[123px] text-30 xl:text-36 xl:leading-[39px] font-200 uppercase">
 					{text.question}
 				</h3>
-				<div className="flex gap-[20px] l:gap-[100px] xl:gap-[24px] ">
+				<div className="flex gap-[20px] xl:gap-[24px] ">
 					{isScreenTabletSm && !isScreenTabletXl && (
 						<ul className="flex flex-col self-start gap-[24px] text-right leading-[20px] min-w-[222px] max-w-[277px]">
 							{text.features.map(

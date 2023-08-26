@@ -69,7 +69,7 @@ export function Slider() {
 									onClick={() => {
 										instanceRef.current?.moveToIdx(activity.id - 1);
 									}}
-									className="flex gap-[8px] items-center justify-start text-left"
+									section="services"
 								>
 									{currentSlide === activity.id - 1 && (
 										<Image

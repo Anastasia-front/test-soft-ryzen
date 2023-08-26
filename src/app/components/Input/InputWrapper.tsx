@@ -39,8 +39,6 @@ export const InputWrapper = forwardRef<InputWrapperElement, InputWrapperProps>(
 			label && label?.trim().length > 0 ? label : NON_BREAKING_SPACE;
 
 		const labelStyles = [
-			"md:w-[30vw]",
-			"xl:w-[20vw]",
 			"text-12",
 			"font-200",
 			"text-cap",
@@ -52,10 +50,7 @@ export const InputWrapper = forwardRef<InputWrapperElement, InputWrapperProps>(
 
 		return (
 			<div
-				className={clsx(
-					"flex flex-col gap-[12px] md:gap-[4px] md:w-[30vw] xl:w-[20vw]",
-					className
-				)}
+				className={clsx("flex flex-col gap-[12px] md:gap-[4px]", className)}
 				ref={ref}
 				{...rest}
 			>
@@ -78,7 +73,7 @@ export const InputWrapper = forwardRef<InputWrapperElement, InputWrapperProps>(
 							)}
 							<p
 								className="text-red text-12 font-200 text-cap text-justify
-					 leading-[24px] tracking-[2.4px] w-[86vw] min-w-[280px] md:min-w-[222px] xl:min-w-[268px]"
+					 leading-[24px] tracking-[2.4px] w-[280px] md:w-[222px] xl:w-[268px]"
 							>
 								{error}
 							</p>

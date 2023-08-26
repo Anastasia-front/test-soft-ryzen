@@ -57,13 +57,11 @@ export const TextInput = forwardRef<TextInputElement, TextInputProps>(
 				: "";
 
 		const inputStyles = [
-			"max-w-[86vw]",
 			"h-[28px]",
-			"min-w-[280px]",
-			"md:max-w-[222px]",
-			"md:min-w-[222px]",
+			"w-[280px]",
+			"md:w-[222px]",
 			"xl:h-[28px]",
-			"xl:min-w-[290px]",
+			"xl:w-[290px]",
 			"bg-input",
 			"py-[6px]",
 			"px-[8px]",

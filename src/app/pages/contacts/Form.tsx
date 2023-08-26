@@ -104,7 +104,7 @@ export function Form() {
 
 	return (
 		<form
-			className="flex flex-col w-[100%] gap-[16px] justify-center items-center"
+			className="flex flex-col gap-[16px] justify-center items-center"
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			{formList.map((field: string) => {

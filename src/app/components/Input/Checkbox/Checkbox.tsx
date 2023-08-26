@@ -38,7 +38,10 @@ export function Checkbox(
 			disabled={disabled}
 			showError={!!errors}
 		>
-			<div className="flex items-center min-w-[259px] md:min-w-[222px] md:w-[222px] xl:w-[290px]">
+			<div
+				className="flex items-center md:ml-[-125px] md:mt-[-10px]
+			xl:absolute xl:bottom-[-20px] xl:left-[140px] w-[259px] md:w-[222px] xl:w-[290px]"
+			>
 				<label className="flex items-start gap-[8px] cursor-pointer">
 					<input
 						type="checkbox"

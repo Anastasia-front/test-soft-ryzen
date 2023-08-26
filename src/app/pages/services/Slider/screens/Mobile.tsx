@@ -45,7 +45,7 @@ export function Mobile({ number, handleActivityClick }: SlideProps) {
 						</p>
 					</div>
 					<ul
-						className="flex flex-col gap-[16px] items-left uppercase text-20 text-light2
+						className="flex flex-col gap-[16px] items-left uppercase  text-light2
 					leading-[17px] max-w-[185px] sm:text-22 sm:leading-[26px] sm:max-w-[270px]"
 					>
 						{handleActivityClick()}
