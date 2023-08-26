@@ -19,7 +19,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<Head>
-				<meta property="og:image" content="/Logo.png" />
+				<meta property="og:image" content="/logo.png" />
 				<meta property="og:url" content="https://test-soft-ryzen.vercel.app/" />
 			</Head>
 			<body className={inter.className}>
