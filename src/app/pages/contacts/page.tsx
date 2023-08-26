@@ -20,7 +20,7 @@ type ContactItem = {
 	}>;
 };
 
-export default function Contacts() {
+export function Contacts() {
 	const textData = useText();
 
 	const text = textData.contacts;
