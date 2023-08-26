@@ -58,7 +58,7 @@ export function Carousel3d({
 		<div className={className}>
 			<AnimatePresence mode="popLayout" custom={direction} initial={false}>
 				{visibleIndices.map((card) => {
-					const { src, alt, id } = card;
+					const { src, id } = card;
 					return (
 						<motion.div
 							key={id}

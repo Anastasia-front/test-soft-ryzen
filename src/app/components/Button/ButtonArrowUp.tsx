@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+
 import { forwardRef, useEffect, useState } from "react";
+
 import { Button } from "./Button";
 
 type ButtonElement = HTMLElementTagNameMap["button"];

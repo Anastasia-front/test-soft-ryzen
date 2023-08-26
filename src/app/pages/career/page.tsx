@@ -3,6 +3,7 @@
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 
 import { Section } from "@/app/components/Section/Section";
+
 import { Mobile } from "./screens/Mobile";
 import { TabletAndDesktop } from "./screens/TabletAndDesktop";
 

@@ -1,8 +1,10 @@
-import clsx from "clsx";
-import Image from "next/image";
 import { forwardRef } from "react";
 
-export type InputWrapperElement = HTMLDivElement;
+import Image from "next/image";
+
+import clsx from "clsx";
+
+type InputWrapperElement = HTMLDivElement;
 
 export interface InputWrapperCommonProps {
 	label?: string;

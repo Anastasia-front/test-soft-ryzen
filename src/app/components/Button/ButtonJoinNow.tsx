@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Link } from "react-scroll";
 
 import { useText } from "@/app/context/TextDataContext";
+
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 
 export function ButtonJoinNow() {

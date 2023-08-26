@@ -1,5 +1,6 @@
-import { useKeyPress } from "@/app/hooks/useKeyPress";
 import ReactDOM from "react-dom";
+
+import { useKeyPress } from "@/app/hooks/useKeyPress";
 
 interface ModalProps {
 	className?: string;

@@ -1,9 +1,10 @@
 "use client";
 
-import { useScreenQuery } from "@/app/hooks/useScreenQuery";
-import { Form } from "../Form";
-
 import { useText } from "@/app/context/TextDataContext";
+
+import { useScreenQuery } from "@/app/hooks/useScreenQuery";
+
+import { Form } from "../Form";
 
 export function TabletAndDesktop() {
 	const textData = useText();

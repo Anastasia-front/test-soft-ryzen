@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import { useState } from "react";
 
-import { useScreenQuery } from "@/app/hooks/useScreenQuery";
-
 import { Navigation } from "@/app/components/Header/Navigation";
 
-import Link from "next/link";
+import { useScreenQuery } from "@/app/hooks/useScreenQuery";
+
 import { BurgerMenu } from "./BurgerMenu";
 
 export function Header(props: { className: string }) {

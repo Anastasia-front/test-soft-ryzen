@@ -1,11 +1,11 @@
 "use client";
 
+import Image from "next/image";
+
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
 import { images } from "../data/images";
-
-import Image from "next/image";
 
 export function Mobile() {
 	const [ref] = useKeenSlider<HTMLDivElement>({

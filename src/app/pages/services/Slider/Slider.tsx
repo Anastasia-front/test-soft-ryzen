@@ -1,17 +1,17 @@
 "use client";
 
+import Image from "next/image";
+
 import React, { useEffect, useState } from "react";
 
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
-import Image from "next/image";
-
 import { Button } from "@/app/components/Button/Button";
 
-import { Slide } from "./Slide";
-
 import { useText } from "@/app/context/TextDataContext";
+
+import { Slide } from "./Slide";
 
 import s from "./Slider.module.scss";
 

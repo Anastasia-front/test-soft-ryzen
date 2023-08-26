@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
+
 import { useTextData } from "../hooks/useTextData";
 
 const TextDataContext = createContext<Record<string, any>>({});

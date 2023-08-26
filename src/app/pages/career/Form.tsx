@@ -9,8 +9,11 @@ import { Checkbox } from "@/app/components/Input/Checkbox/Checkbox";
 import { TextInput } from "@/app/components/Input/TextInput";
 import { ModalSubmit } from "@/app/components/Modal/ModalSubmit";
 import { Textarea } from "@/app/components/Textarea/Textarea";
+
 import { useText } from "@/app/context/TextDataContext";
+
 import { isObjectEmpty } from "@/app/helpers/isObjectEmpty";
+
 import { FormFields, FormFieldsData } from "@/app/types/formTypes";
 
 export function Form() {

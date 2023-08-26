@@ -1,9 +1,10 @@
 "use client";
 
-import { useText } from "@/app/context/TextDataContext";
-import { useScreenQuery } from "@/app/hooks/useScreenQuery";
-
 import { Link } from "react-scroll";
+
+import { useText } from "@/app/context/TextDataContext";
+
+import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 
 interface NavigationProps {
 	onCloseMenu: () => void;

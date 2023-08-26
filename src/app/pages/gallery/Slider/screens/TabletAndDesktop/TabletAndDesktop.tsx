@@ -1,14 +1,19 @@
 "use client";
 
+import Image from "next/image";
+
 import { useCallback, useMemo, useState } from "react";
 
 import type { MotionProps } from "framer-motion";
-import Image from "next/image";
 
 import { Button } from "@/app/components/Button/Button";
+
 import { useText } from "@/app/context/TextDataContext";
+
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
+
 import { images } from "../../data/images";
+
 import { CardData, Carousel3d } from "./Carousel3d/Carousel3d";
 
 const animationDuration = 0.5;

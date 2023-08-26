@@ -29,22 +29,36 @@ module.exports = {
 			"error",
 			{
 				groups: [
-					["use client", "^next/", "^react", "^react-", "^@?\\w"],
-
+					["use client"],
+					["^next/"],
+					["^react", "^react-"],
+					["^@?\\w"],
 					["^@/app/components"],
-
 					["^@/app/context"],
-
 					["^@/app/helpers"],
-
 					["^@/app/hooks"],
-
 					["^@/app/pages"],
-
 					["^@/app/types"],
-
 					["^[./]"],
-
+					[".(sc|sa|c)ss$"],
+				],
+			},
+		],
+		"simple-import-sort/exports": [
+			"error",
+			{
+				groups: [
+					["use client"],
+					["^next/"],
+					["^react", "^react-"],
+					["^@?\\w"],
+					["^@/app/components"],
+					["^@/app/context"],
+					["^@/app/helpers"],
+					["^@/app/hooks"],
+					["^@/app/pages"],
+					["^@/app/types"],
+					["^[./]"],
 					[".(sc|sa|c)ss$"],
 				],
 			},
