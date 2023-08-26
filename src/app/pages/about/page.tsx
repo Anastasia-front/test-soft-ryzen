@@ -6,7 +6,7 @@ import { useText } from "@/app/context/TextDataContext";
 
 import s from "./styles.module.scss";
 
-export function About() {
+export default function About() {
 	const textData = useText();
 
 	const text = textData.about;

@@ -8,7 +8,7 @@ import { Slider } from "./Slider/Slider";
 
 import s from "./styles.module.scss";
 
-export function Gallery() {
+export default function Gallery() {
 	const textData = useText();
 
 	const text = textData.gallery;

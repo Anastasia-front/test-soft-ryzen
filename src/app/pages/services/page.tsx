@@ -1,5 +1,5 @@
 import { Slider } from "./Slider/Slider";
 
-export function Services() {
+export default function Services() {
 	return <Slider />;
 }

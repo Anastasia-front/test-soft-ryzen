@@ -9,7 +9,7 @@ import { TabletAndDesktop } from "./screens/TabletAndDesktop";
 
 import s from "./styles.module.scss";
 
-export function Career() {
+export default function Career() {
 	const { isScreenTabletSm } = useScreenQuery();
 
 	return (
