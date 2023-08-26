@@ -10,7 +10,16 @@ export function TextDataProvider({ children }: { children: React.ReactNode }) {
 
 	return (
 		<TextDataContext.Provider value={textData}>
-			{loading ? <p>Loading...</p> : children} {/* Render loading indicator */}
+			{loading ? (
+				<div className="flex items-center justify-center h-[100vh] gap-[50px]">
+					<span className="loader"></span>
+					<p className="font-300 text-30 tracking-tight">
+						Please wait while the page is loading...
+					</p>
+				</div>
+			) : (
+				children
+			)}
 		</TextDataContext.Provider>
 	);
 }
