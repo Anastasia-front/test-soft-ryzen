@@ -1,46 +1,26 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { SubmitHandler, UseFormRegisterReturn } from "react-hook-form";
+import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
 import { Button } from "@/app/components/Button/Button";
 import { TextInput } from "@/app/components/Input/TextInput";
-import { ModalSubmit } from "@/app/components/Modal/ModalSubmit/ModalSubmit";
+import { ModalSubmit } from "@/app/components/Modal/ModalSubmit";
 import { Textarea } from "@/app/components/Textarea/Textarea";
+import { useText } from "@/app/context/TextDataContext";
 import { isObjectEmpty } from "@/app/helpers/isObjectEmpty";
-
-import { formList } from "./data/formList";
-import type { FormFields } from "./types/FormFields";
-
-interface Field {
-	type: string;
-	name: string;
-	label?: string;
-	inputMode?:
-		| "text"
-		| "email"
-		| "tel"
-		| "search"
-		| "none"
-		| "url"
-		| "numeric"
-		| "decimal"
-		| undefined;
-	placeholder?: string;
-	required?: boolean;
-	disabled?: boolean;
-	register: () => UseFormRegisterReturn<keyof FormFields>;
-	options?: string[];
-	text?: string;
-	defaultValue?: string;
-}
-
-type FormFieldsData = {
-	[key: string]: Field;
-};
+import { FormFields, FormFieldsData } from "@/app/types/formTypes";
 
 export function Form() {
+	const textData = useText();
+
+	const formList = textData.contacts.form.formList;
+	const field = textData.contacts.form.fields;
+	const required = textData.contacts.form.required;
+	const button = textData.contacts.form.button;
+	const modal = textData.contacts.form.modal;
+
 	const {
 		register,
 		reset,
@@ -59,38 +39,42 @@ export function Form() {
 	const formFieldsData: FormFieldsData = useMemo(
 		() => ({
 			fullName: {
-				type: "text",
-				inputMode: "text",
-				name: "fullName",
-				label: "Full name",
-				placeholder: "John Smith",
+				type: field.fullName.type,
+				inputMode: field.fullName.inputMode,
+				name: field.fullName.name,
+				label: field.fullName.label,
+				placeholder: field.fullName.placeholder,
 				required: true,
 				register: () =>
-					register("fullName", {
-						required: "Incorrect name",
-						pattern: /^[a-zA-Z]+\s[a-zA-Z]+$/,
+					register(field.fullName.name, {
+						required: required,
+						pattern: new RegExp(field.fullName.pattern),
 					}),
 			},
 			email: {
-				type: "text",
-				inputMode: "email",
-				name: "email",
-				label: "E-mail",
-				placeholder: "johnsmith@email.com",
+				type: field.email.type,
+				inputMode: field.email.inputMode,
+				name: field.email.name,
+				label: field.email.label,
+				placeholder: field.email.placeholder,
 				required: true,
 				register: () =>
-					register("email", {
-						required: "Incorrect e-mail",
-						pattern: /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,
+					register(field.email.name, {
+						required: required,
+						pattern: new RegExp(field.email.pattern),
 					}),
 			},
 			message: {
-				type: "message",
-				inputMode: "text",
-				name: "message",
-				label: "Message",
-				placeholder: "",
-				register: () => register("message"),
+				type: field.message.type,
+				inputMode: field.message.inputMode,
+				name: field.message.name,
+				label: field.message.label,
+				placeholder: field.message.placeholder,
+				required: true,
+				register: () =>
+					register(field.message.name, {
+						pattern: new RegExp(field.message.pattern),
+					}),
 			},
 		}),
 		[register]
@@ -120,7 +104,7 @@ export function Form() {
 			className="flex flex-col w-[100%] gap-[16px] justify-center items-center"
 			onSubmit={handleSubmit(onSubmit)}
 		>
-			{formList.map((field) => {
+			{formList.map((field: string) => {
 				if (!formFieldsData[field]) return null;
 
 				switch (formFieldsData[field].type) {
@@ -159,16 +143,11 @@ export function Form() {
 				type="submit"
 				submit
 				disabled={!isValidFixed || !watchFullName || !watchEmail}
-				className="self-end"
+				className="self-end uppercase"
 			>
-				SEND
+				{button}
 			</Button>
-			{open && (
-				<ModalSubmit
-					text="Your information was sent"
-					onCloseMenu={onCloseMenu}
-				/>
-			)}
+			{open && <ModalSubmit text={modal} onCloseMenu={onCloseMenu} />}
 		</form>
 	);
 }

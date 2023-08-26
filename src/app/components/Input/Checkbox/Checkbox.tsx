@@ -1,7 +1,7 @@
 import type { FieldErrors, FieldValues } from "react-hook-form";
 
-import type { InputWrapperCommonProps } from "../InputWrapper/InputWrapper";
-import { InputWrapper } from "../InputWrapper/InputWrapper";
+import type { InputWrapperCommonProps } from "../InputWrapper";
+import { InputWrapper } from "../InputWrapper";
 
 import s from "./Checkbox.module.scss";
 

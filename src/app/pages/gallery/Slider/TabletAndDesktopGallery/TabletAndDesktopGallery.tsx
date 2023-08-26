@@ -6,6 +6,7 @@ import type { MotionProps } from "framer-motion";
 import Image from "next/image";
 
 import { Button } from "@/app/components/Button/Button";
+import { useText } from "@/app/context/TextDataContext";
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 import { images } from "../../data/images";
 import { CardData, Carousel3d } from "./Carousel3d/Carousel3d";
@@ -82,6 +83,10 @@ const animation: MotionProps = {
 };
 
 export function TabletAndDesktopGallery() {
+	const textData = useText();
+
+	const text = textData.gallery.buttons;
+
 	const [[activeIndex, direction], setActiveIndex] = useState([
 		Math.floor(images.length / 2),
 		-1,
@@ -155,13 +160,13 @@ export function TabletAndDesktopGallery() {
 					className="uppercase text-33 font-100 leading-normal"
 					onClick={() => paginate(-1)}
 				>
-					back
+					{text.back}
 				</Button>
 				<Button
 					className="uppercase text-33 font-100 leading-normal"
 					onClick={() => paginate(1)}
 				>
-					next
+					{text.next}
 				</Button>
 			</div>
 		</div>

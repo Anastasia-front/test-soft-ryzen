@@ -1,6 +1,6 @@
 import type { FieldErrors, FieldValues } from "react-hook-form";
 
-import { InputWrapper } from "../Input/InputWrapper/InputWrapper";
+import { InputWrapper } from "../Input/InputWrapper";
 
 export type TextareaElement = HTMLTextAreaElement;
 

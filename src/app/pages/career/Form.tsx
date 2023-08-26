@@ -1,47 +1,27 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { SubmitHandler, UseFormRegisterReturn } from "react-hook-form";
+import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
 import { Button } from "@/app/components/Button/Button";
 import { Checkbox } from "@/app/components/Input/Checkbox/Checkbox";
 import { TextInput } from "@/app/components/Input/TextInput";
-import { ModalSubmit } from "@/app/components/Modal/ModalSubmit/ModalSubmit";
+import { ModalSubmit } from "@/app/components/Modal/ModalSubmit";
 import { Textarea } from "@/app/components/Textarea/Textarea";
+import { useText } from "@/app/context/TextDataContext";
 import { isObjectEmpty } from "@/app/helpers/isObjectEmpty";
-
-import { formList } from "./data/formList";
-import type { FormFields } from "./types/FormFields";
-
-interface Field {
-	type: string;
-	name: string;
-	label?: string;
-	inputMode?:
-		| "text"
-		| "email"
-		| "tel"
-		| "search"
-		| "none"
-		| "url"
-		| "numeric"
-		| "decimal"
-		| undefined;
-	placeholder?: string;
-	required?: boolean;
-	disabled?: boolean;
-	register: () => UseFormRegisterReturn<keyof FormFields>;
-	options?: string[];
-	text?: string;
-	defaultValue?: string;
-}
-
-type FormFieldsData = {
-	[key: string]: Field;
-};
+import { FormFields, FormFieldsData } from "@/app/types/formTypes";
 
 export function Form() {
+	const textData = useText();
+
+	const formList = textData.career.form.formList;
+	const field = textData.career.form.fields;
+	const required = textData.career.form.required;
+	const button = textData.career.form.button;
+	const modal = textData.career.form.modal;
+
 	const {
 		register,
 		reset,
@@ -70,76 +50,79 @@ export function Form() {
 	const formFieldsData: FormFieldsData = useMemo(
 		() => ({
 			fullName: {
-				type: "text",
-				inputMode: "text",
-				name: "fullName",
-				label: "Full name",
-				placeholder: "John Smith",
+				type: field.fullName.type,
+				inputMode: field.fullName.inputMode,
+				name: field.fullName.name,
+				label: field.fullName.label,
+				placeholder: field.fullName.placeholder,
 				required: true,
 				register: () =>
-					register("fullName", {
-						required: "This field is required",
-						pattern: /^[a-zA-Z]+\s[a-zA-Z]+$/,
+					register(field.fullName.name, {
+						required: required,
+						pattern: new RegExp(field.fullName.pattern),
 					}),
 			},
 			email: {
-				type: "text",
-				inputMode: "email",
-				name: "email",
-				label: "E-mail",
-				placeholder: "johnsmith@email.com",
+				type: field.email.type,
+				inputMode: field.email.inputMode,
+				name: field.email.name,
+				label: field.email.label,
+				placeholder: field.email.placeholder,
 				required: true,
 				register: () =>
-					register("email", {
-						required: "This field is required",
-						pattern: /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/,
+					register(field.email.name, {
+						required: required,
+						pattern: new RegExp(field.email.pattern),
 					}),
 			},
 			phone: {
-				type: "text",
-				inputMode: "tel",
-				name: "phone",
-				label: "Phone",
-				placeholder: "+38 (097) 12 34 567",
+				type: field.phone.type,
+				inputMode: field.phone.inputMode,
+				name: field.phone.name,
+				label: field.phone.label,
+				placeholder: field.phone.placeholder,
 				required: true,
 				register: () =>
-					register("phone", {
-						required: "This field is required",
-						pattern:
-							/^(?:(?:\+380|0)[.-]?\d{2}[.-]?\d{2}[.-]?\d{2}[.-]?\d{3}|\d{10})$/,
+					register(field.phone.name, {
+						required: required,
+						pattern: new RegExp(field.phone.pattern),
 					}),
 			},
 			position: {
-				type: "text",
-				inputMode: "text",
-				name: "position",
-				label: "Position",
-				placeholder: "Movie maker",
+				type: field.position.type,
+				inputMode: field.position.inputMode,
+				name: field.position.name,
+				label: field.position.label,
+				placeholder: field.position.placeholder,
 				required: true,
 				register: () =>
-					register("position", {
-						required: "This field is required",
-						pattern: /^[a-zA-Z]/,
+					register(field.position.name, {
+						required: required,
+						pattern: new RegExp(field.position.pattern),
 					}),
 			},
 			message: {
-				type: "message",
-				inputMode: "text",
-				name: "message",
-				label: "Message",
-				placeholder: "",
-				register: () => register("message"),
-			},
-			consent: {
-				type: "checkbox",
-				name: "consent",
-				placeholder: "",
+				type: field.message.type,
+				inputMode: field.message.inputMode,
+				name: field.message.name,
+				label: field.message.label,
+				placeholder: field.message.placeholder,
 				required: true,
 				register: () =>
-					register("consent", {
+					register(field.message.name, {
+						pattern: new RegExp(field.message.pattern),
+					}),
+			},
+			consent: {
+				type: field.consent.type,
+				name: field.consent.name,
+				placeholder: field.consent.placeholder,
+				required: true,
+				register: () =>
+					register(field.consent.name, {
 						required: true,
 					}),
-				text: "I confirm my consent to the processing of personal data.",
+				text: field.consent.text,
 			},
 		}),
 		[register]
@@ -164,7 +147,7 @@ export function Form() {
 			className="flex flex-col w-[100%] md:w-[60vw] xl:w-[45vw] gap-[16px] xl:gap-[24px] justify-center items-center sm:pl-[20px] md:pl-0"
 			onSubmit={handleSubmit(onSubmit)}
 		>
-			{formList.map((field) => {
+			{formList.map((field: string) => {
 				if (!formFieldsData[field]) return null;
 
 				switch (formFieldsData[field].type) {
@@ -226,16 +209,11 @@ export function Form() {
 					!watchPosition ||
 					!isValidFixed
 				}
-				className="md:mt-[-75px] md:ml-[420px] xl:mt-[-85px] xl:ml-[552px]"
+				className="md:mt-[-75px] md:ml-[420px] xl:mt-[-85px] xl:ml-[552px] uppercase"
 			>
-				SEND
+				{button}
 			</Button>
-			{open && (
-				<ModalSubmit
-					text="Your information was sent"
-					onCloseMenu={onCloseMenu}
-				/>
-			)}
+			{open && <ModalSubmit text={modal} onCloseMenu={onCloseMenu} />}
 		</form>
 	);
 }

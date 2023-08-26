@@ -1,0 +1,274 @@
+{
+	"home": {
+		"title": { "boldText": "Uncover", "thinText": "Carpathian’s Secrets" },
+		"subtitle": "We offer you unforgettable trips to the most beautiful parts of the Carpathians. Enjoy stunning views, exciting expeditions, and the best service!",
+		"duration": { "amount": "7", "days": "days", "journey": "journey" },
+		"places": "Hoverla / Yaremche / Zakarpattia / Vorokhta / Synevyr Lake / Bukovel",
+		"navigation": [
+			{
+				"id": 1,
+				"name": "About",
+				"href": "about"
+			},
+			{
+				"id": 2,
+				"name": "Services",
+				"href": "services"
+			},
+			{
+				"id": 3,
+				"name": "Career",
+				"href": "career"
+			},
+			{
+				"id": 4,
+				"name": "Gallery",
+				"href": "gallery"
+			},
+			{
+				"id": 5,
+				"name": "Contacts",
+				"href": "contacts"
+			}
+		],
+		"button": "join now"
+	},
+	"about": {
+		"title": { "thinText": "Who", "boldText": "we are" },
+		"description": [
+			{
+				"id": 1,
+				"boldText": "a team of enthusiasts",
+				"thinText": "who are fully committed to the mission of creating unforgettable and extraordinary trips to the most beautiful parts of the Carpathians. Our goal is not just to show you the natural wonders of the mountains, but to provide you with a deep immersion in their magical atmosphere."
+			},
+			{
+				"id": 2,
+				"boldText": "We believe",
+				"thinText": "that nature has the power to inspire, strengthen character and provide new perspectives. Therefore, each of our tours is aimed at unlocking your potential, enriching your spiritual world and creating unforgettable memories."
+			}
+		],
+		"methods": {
+			"boldText": "We use methods",
+			"thinText": "that are time-tested and proven. Our expert guides with in-depth knowledge of the Carpathian landscapes lead you safely through the mysteries of these mountains."
+		},
+		"goal": {
+			"from": "From vacationers",
+			"to": "to active travelers",
+			"for": "we have a tour for everyone."
+		}
+	},
+	"services": {
+		"activities": [
+			{ "id": 1, "name": "ATVs Traveling" },
+			{ "id": 2, "name": "Rock climbing" },
+			{ "id": 3, "name": "Hot air ballooning" },
+			{ "id": 4, "name": "Skydiving" },
+			{ "id": 5, "name": "Rafting" }
+		],
+		"content": [
+			{
+				"id": 1,
+				"titlePartThin": "WE ",
+				"titlePartTBold": "OFFER",
+				"currentNumber": "01/",
+				"amountOfSlides": "05",
+				"subtitle": "Feel the adrenaline rush",
+				"description": "Join exciting rafting expeditions on the waterways of the Carpathians. Go through challenging waterways and overcome gusty waves, feel the adrenaline, and enjoy the incredible views of the surrounding mountains."
+			},
+			{
+				"id": 2,
+				"titlePartThin": "WE ",
+				"titlePartTBold": "OFFER",
+				"currentNumber": "02/",
+				"amountOfSlides": "05",
+				"subtitle": "Destroy your limitations",
+				"description": "Overcome the peaks of the Carpathians in a unique way - climbing. Make your own way to the heights and find inner peace in the embrace of the mighty rocks."
+			},
+			{
+				"id": 3,
+				"titlePartThin": "WE ",
+				"titlePartTBold": "OFFER",
+				"currentNumber": "03/",
+				"amountOfSlides": "05",
+				"subtitle": "Get inspired",
+				"description": "Feel Zen over the mountain peaks! Hot air ballooning gives you incredible impressions and panoramas of the Carpathians that seem endless."
+			},
+			{
+				"id": 4,
+				"titlePartThin": "WE ",
+				"titlePartTBold": "OFFER",
+				"currentNumber": "04/",
+				"amountOfSlides": "05",
+				"subtitle": "Overcome your fears",
+				"description": "Fly in the sky over the Carpathians! Experienced instructors will help you realize your dream of free flight. Remember the incredible emotions and panoramas from a bird's eye view forever."
+			},
+			{
+				"id": 5,
+				"titlePartThin": "WE ",
+				"titlePartTBold": "OFFER",
+				"currentNumber": "05/",
+				"amountOfSlides": "05",
+				"subtitle": "Trust the flow",
+				"description": "Join exciting rafting expeditions on the waterways of the Carpathians. Go through challenging waterways and overcome gusty waves, feel the adrenaline, and enjoy the incredible views of the surrounding mountains."
+			}
+		]
+	},
+	"career": {
+		"title": { "thinText": "choose", "boldText": "us" },
+		"question": "Why us ?",
+		"features": [
+			{
+				"id": 1,
+				"title": "Professional development",
+				"text": "We offer growth opportunities and a creative environment to nurture your talents."
+			},
+			{
+				"id": 2,
+				"title": "Teamwork",
+				"text": "Join our close-knit family, where support and inspiration abound."
+			},
+			{
+				"id": 3,
+				"title": "Stimulating work environment",
+				"text": "Flexibility and remote options for a comfortable experience."
+			},
+			{
+				"id": 4,
+				"title": "Exciting challenges",
+				"text": "Unleash your potential through unforgettable projects showcasing Carpathian beauty."
+			}
+		],
+		"form": {
+			"formList": [
+				"fullName",
+				"email",
+				"position",
+				"phone",
+				"message",
+				"consent"
+			],
+			"fields": {
+				"email": {
+					"name": "email",
+					"label": "E-mail",
+					"placeholder": "johnsmith@email.com",
+					"pattern": "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,3}$",
+					"type": "text",
+					"inputMode": "email"
+				},
+				"phone": {
+					"name": "phone",
+					"label": "Phone",
+					"placeholder": "+38 (097) 12 34 567",
+					"pattern": "^(?:(?:\\+380|0)[.-]?\\d{2}[.-]?\\d{2}[.-]?\\d{2}[.-]?\\d{3}|\\d{10})$",
+					"type": "text",
+					"inputMode": "tel"
+				},
+				"position": {
+					"name": "position",
+					"label": "Position",
+					"placeholder": "Movie maker",
+					"pattern": "^[a-zA-Z]",
+					"type": "text",
+					"inputMode": "text"
+				},
+				"message": {
+					"name": "message",
+					"label": "Message",
+					"placeholder": "",
+					"pattern": "^[a-zA-Z]",
+					"type": "message",
+					"inputMode": "text"
+				},
+				"consent": {
+					"name": "consent",
+					"placeholder": "",
+					"type": "checkbox",
+					"text": "I confirm my consent to the processing of personal data."
+				},
+				"fullName": {
+					"name": "fullName",
+					"label": "Full name",
+					"placeholder": "John Smith",
+					"pattern": "^[a-zA-Z]+\\s[a-zA-Z]+$",
+					"type": "text",
+					"inputMode": "text"
+				}
+			},
+			"required": "This field is required",
+			"button": "send",
+			"modal": "Your information was sent"
+		},
+		"chance": "Your chance to join our passionate team in Carpathian tourism. Seeking talented professionals to share our common mission.",
+		"join": "Don't miss your opportunity! Fill out the form right now and join our team!"
+	},
+	"gallery": {
+		"title": { "thinText": "our", "boldText": "gallery" },
+		"buttons": { "next": "next", "back": "back" }
+	},
+	"contacts": {
+		"title": { "thinText": "contact", "boldText": "us" },
+		"content": [
+			{
+				"id": 1,
+				"type": "tel:",
+				"name": "Phone number",
+				"items": [
+					{ "id": 1, "type": "tel:", "value": "+38 (098) 12 34 567" },
+					{ "id": 2, "type": "tel:", "value": "+38 (073) 12 34 567" }
+				]
+			},
+			{
+				"id": 2,
+				"type": "mailto:",
+				"name": "E-mail",
+				"items": [
+					{ "id": 1, "type": "mailto:", "value": "support@carptravel.com" }
+				]
+			},
+			{
+				"id": 3,
+				"type": "https://",
+				"name": "Follow us",
+				"items": [
+					{ "id": 1, "value": "facebook", "href": "#" },
+					{ "id": 2, "value": "instagram", "href": "#" },
+					{ "id": 3, "value": "youtube", "href": "#" },
+					{ "id": 4, "value": "tiktok", "href": "#" }
+				]
+			}
+		],
+		"form": {
+			"formList": ["fullName", "email", "message"],
+			"fields": {
+				"email": {
+					"name": "email",
+					"label": "E-mail",
+					"placeholder": "johnsmith@email.com",
+					"pattern": "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,3}$",
+					"type": "text",
+					"inputMode": "email"
+				},
+				"message": {
+					"name": "message",
+					"label": "Message",
+					"placeholder": "",
+					"pattern": "^[a-zA-Z]",
+					"type": "message",
+					"inputMode": "text"
+				},
+				"fullName": {
+					"name": "fullName",
+					"label": "Full name",
+					"placeholder": "John Smith",
+					"pattern": "^[a-zA-Z]+\\s[a-zA-Z]+$",
+					"type": "text",
+					"inputMode": "text"
+				}
+			},
+			"required": "This field is required",
+			"button": "send",
+			"modal": "Your information was sent"
+		}
+	}
+}

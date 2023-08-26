@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import { Navigation } from "@/app/components/Header/Navigation";
 
-import { ModalPortal } from "../Modal/ModalPortal/ModalPortal";
+import { ModalPortal } from "../Modal/ModalPortal";
 
 export function BurgerMenu() {
 	const [open, setOpen] = useState(false);

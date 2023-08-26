@@ -1,10 +1,17 @@
 "use client";
 
-import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 import Image from "next/image";
+
 import { Link } from "react-scroll";
 
+import { useText } from "@/app/context/TextDataContext";
+import { useScreenQuery } from "@/app/hooks/useScreenQuery";
+
 export function ButtonJoinNow() {
+	const textData = useText();
+
+	const button = textData.home.button;
+
 	const { isScreenTabletSm, isScreenTabletXl } = useScreenQuery();
 
 	const offset = isScreenTabletXl ? 80 : isScreenTabletSm ? 60 : 10;
@@ -42,7 +49,7 @@ export function ButtonJoinNow() {
 				height={imageHeightClass}
 				className="absolute top-0 left-0"
 			/>
-			join now
+			{button}
 			<Image
 				src={`/svg/buttonJoinNow/${imageSize}-right.svg`}
 				alt="desktop right part of border"

@@ -1,10 +1,29 @@
+"use client";
+
 import { Section } from "@/app/components/Section/Section";
-import { Form } from "./Form/Form";
-import { contacts } from "./data/contacts";
+import { useText } from "@/app/context/TextDataContext";
+
+import { Form } from "./Form";
 
 import s from "./styles.module.scss";
 
+type ContactItem = {
+	id: number;
+	type: string;
+	name: string;
+	items: Array<{
+		id: number;
+		type?: string;
+		value: string;
+		href?: string;
+	}>;
+};
+
 export default function Contacts() {
+	const textData = useText();
+
+	const text = textData.contacts;
+
 	return (
 		<Section className={s.bg} id="contacts">
 			<div className="flex flex-col gap-[36px] xl:gap-[71px]">
@@ -12,7 +31,8 @@ export default function Contacts() {
 					className="uppercase font-100 text-40 md:text-67 xl:text-98  leading-[56px] md:leading-[66px]
 			tracking-[-1.6px] md:tracking-[-2.68px] xl:tracking-[-3.92px]"
 				>
-					Contact<span className="font-500"> US</span>
+					{text.title.thinText}{" "}
+					<span className="font-500"> {text.title.boldText}</span>
 				</h2>
 				<div
 					className="self-end md:self-center  w-full
@@ -23,15 +43,15 @@ export default function Contacts() {
 				 md:h-[100px] gap-y-[24px] gap-x-[90px] xl:gap-y-[64px] items-end
 				 text-left xl:text-right xl:pl-[95px]"
 					>
-						{contacts.map((c) => (
+						{text.content.map((contact: ContactItem) => (
 							<li
-								key={c.id}
+								key={contact.id}
 								className="flex gap-[20px] last:flex-row-reverse
 							xl:last:flex-row first:pr-0 last:pr-[15px] md:last:pr-[145px] pr-[46px]
 							xl:last:pt-[60px] xl:last:pr-[28px] xl:w-[300px] xl:justify-end"
 							>
 								<ul>
-									{c.items.map((item) => (
+									{contact.items.map((item) => (
 										<li key={item.id}>
 											<a
 												rel="noopener noreferrer nofollow"
@@ -45,7 +65,7 @@ export default function Contacts() {
 									))}
 								</ul>
 								<p className="text-12 text-left font-200 leading-[20px] pt-[3px]">
-									{c.name}
+									{contact.name}
 								</p>
 							</li>
 						))}

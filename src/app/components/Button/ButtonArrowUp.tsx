@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { forwardRef, useEffect, useState } from "react";
-import { Button } from "../Button";
+import { Button } from "./Button";
 
 type ButtonElement = HTMLElementTagNameMap["button"];
 type ButtonProps = React.HTMLAttributes<ButtonElement>;

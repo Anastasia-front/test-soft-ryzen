@@ -11,12 +11,25 @@ import { Button } from "@/app/components/Button/Button";
 
 import { Slide } from "./Slide";
 
-import { activities } from "./data/activities";
-import { content } from "./data/content";
+import { useText } from "@/app/context/TextDataContext";
 
 import s from "./Slider.module.scss";
 
+interface ContentItem {
+	id: number;
+	titlePartThin: string;
+	titlePartBold: string;
+	currentNumber: string;
+	amountOfSlides: string;
+	subtitle: string;
+	description: string;
+}
+
 export function Slider() {
+	const textData = useText();
+
+	const text = textData.services;
+
 	const [currentSlide, setCurrentSlide] = React.useState(0);
 	const [loaded, setLoaded] = useState(false);
 	const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -42,7 +55,7 @@ export function Slider() {
 			loaded &&
 			instanceRef.current && (
 				<>
-					{activities.map((activity) => {
+					{text.activities.map((activity: { id: number; name: string }) => {
 						return (
 							<li
 								key={activity.id}
@@ -84,11 +97,11 @@ export function Slider() {
 		<div className={s.navigationWrapper}>
 			<div>
 				<div ref={sliderRef} className="keen-slider">
-					{content.map((number, index) => (
+					{text.content.map((item: ContentItem, index: number) => (
 						<div
 							key={index}
 							className={`keen-slider__slide bg-center bg-no-repeat bg-cover ${
-								bgClassNames[number.id]
+								bgClassNames[item.id]
 							}`}
 						>
 							<Slide number={index} handleActivityClick={handleActivityClick} />

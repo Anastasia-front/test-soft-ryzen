@@ -1,5 +1,5 @@
 "use client";
-import { ModalPortal } from "../ModalPortal/ModalPortal";
+import { ModalPortal } from "./ModalPortal";
 
 interface ModalSubmitProps {
 	text: string;
