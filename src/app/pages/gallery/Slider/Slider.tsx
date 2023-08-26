@@ -2,10 +2,10 @@
 
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 
-import { MobileGallery } from "./MobileGallery";
-import { TabletAndDesktopGallery } from "./TabletAndDesktopGallery/TabletAndDesktopGallery";
+import { Mobile } from "./screens/Mobile";
+import { TabletAndDesktop } from "./screens/TabletAndDesktop/TabletAndDesktop";
 
 export function Slider() {
 	const { isScreenTabletSm } = useScreenQuery();
-	return isScreenTabletSm ? <TabletAndDesktopGallery /> : <MobileGallery />;
+	return isScreenTabletSm ? <TabletAndDesktop /> : <Mobile />;
 }

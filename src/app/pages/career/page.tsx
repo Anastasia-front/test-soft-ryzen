@@ -3,8 +3,8 @@
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
 
 import { Section } from "@/app/components/Section/Section";
-import { MobileCareer } from "./MobileCareer";
-import { TabletAndDesktopCareer } from "./TabletAndDesktopCareer";
+import { Mobile } from "./screens/Mobile";
+import { TabletAndDesktop } from "./screens/TabletAndDesktop";
 
 import s from "./styles.module.scss";
 
@@ -13,7 +13,7 @@ export default function Career() {
 
 	return (
 		<Section className={s.bg} id="career">
-			{!isScreenTabletSm ? <MobileCareer /> : <TabletAndDesktopCareer />}
+			{!isScreenTabletSm ? <Mobile /> : <TabletAndDesktop />}
 		</Section>
 	);
 }

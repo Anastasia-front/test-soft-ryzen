@@ -82,7 +82,7 @@ const animation: MotionProps = {
 	dragElastic: 0,
 };
 
-export function TabletAndDesktopGallery() {
+export function TabletAndDesktop() {
 	const textData = useText();
 
 	const text = textData.gallery.buttons;

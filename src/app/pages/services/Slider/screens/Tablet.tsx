@@ -4,13 +4,13 @@ import { Section } from "@/app/components/Section/Section";
 
 import { useText } from "@/app/context/TextDataContext";
 
-import { images } from "./data/images";
+import { images } from "../data/images";
 
-import { SlideProps } from "./Slide";
+import { SlideProps } from "../Slide";
 
-import s from "./Slider.module.scss";
+import s from "../Slider.module.scss";
 
-export function TabletServices({ number, handleActivityClick }: SlideProps) {
+export function Tablet({ number, handleActivityClick }: SlideProps) {
 	const textData = useText();
 
 	const text = textData.services;

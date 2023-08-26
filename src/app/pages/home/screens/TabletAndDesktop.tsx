@@ -4,7 +4,7 @@ import { ButtonJoinNow } from "@/app/components/Button/ButtonJoinNow";
 
 import { useText } from "@/app/context/TextDataContext";
 
-export function TabletAndDesktopHome() {
+export function TabletAndDesktop() {
 	const textData = useText();
 
 	const text = textData.home;

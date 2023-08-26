@@ -7,7 +7,7 @@ import { images } from "../data/images";
 
 import Image from "next/image";
 
-export function MobileGallery() {
+export function Mobile() {
 	const [ref] = useKeenSlider<HTMLDivElement>({
 		loop: true,
 		slides: {

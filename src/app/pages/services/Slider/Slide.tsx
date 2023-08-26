@@ -1,9 +1,9 @@
 "use client";
 
 import { useScreenQuery } from "@/app/hooks/useScreenQuery";
-import { DesktopServices } from "./DesktopServices";
-import { MobileServices } from "./MobileServices";
-import { TabletServices } from "./TabletServices";
+import { Desktop } from "./screens/Desktop";
+import { Mobile } from "./screens/Mobile";
+import { Tablet } from "./screens/Tablet";
 
 export interface SlideProps {
 	number: number;
@@ -13,13 +13,10 @@ export interface SlideProps {
 export function Slide({ number, handleActivityClick }: SlideProps) {
 	const { isScreenTabletSm, isScreenTabletXl } = useScreenQuery();
 	return isScreenTabletXl ? (
-		<DesktopServices
-			number={number}
-			handleActivityClick={handleActivityClick}
-		/>
+		<Desktop number={number} handleActivityClick={handleActivityClick} />
 	) : isScreenTabletSm ? (
-		<TabletServices number={number} handleActivityClick={handleActivityClick} />
+		<Tablet number={number} handleActivityClick={handleActivityClick} />
 	) : (
-		<MobileServices number={number} handleActivityClick={handleActivityClick} />
+		<Mobile number={number} handleActivityClick={handleActivityClick} />
 	);
 }

@@ -1,10 +1,10 @@
 "use client";
 
-import { Form } from "./Form";
+import { Form } from "../Form";
 
 import { useText } from "@/app/context/TextDataContext";
 
-export function MobileCareer() {
+export function Mobile() {
 	const textData = useText();
 
 	const text = textData.career;
