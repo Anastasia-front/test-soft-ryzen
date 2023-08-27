@@ -2,8 +2,6 @@ import { forwardRef } from "react";
 
 import type { FieldErrors, FieldValues } from "react-hook-form";
 
-import { isObjectEmpty } from "@/app/helpers/isObjectEmpty";
-
 import { InputWrapper } from "./InputWrapper";
 
 export type TextInputElement = HTMLInputElement;
@@ -32,29 +30,6 @@ export const TextInput = forwardRef<TextInputElement, TextInputProps>(
 		ref
 	) => {
 		const error = errors ? errors[register?.name]?.message?.toString() : "";
-		const errorMessages: Record<string, string> = {
-			fullName:
-				"Incorrect full name, it must contain name and surname only in Latin",
-			email: "Incorrect email, it must follow suit only in Latin",
-			position: "Incorrect position, it must has only Latin characters",
-			phone: "Incorrect phone, it must have min 10 numbers and start from zero",
-		};
-
-		// const errorMessages: Record<string, string> = {
-		// 	fullName: "Incorrect full name",
-		// 	email: "Incorrect email",
-		// 	position: "Incorrect position",
-		// 	phone: "Incorrect phone",
-		// };
-
-		const errorWithPattern =
-			errors &&
-			!isObjectEmpty(errors) &&
-			register?.name &&
-			errors[register.name]
-				? (errorMessages[register.name] as keyof typeof errorMessages) ||
-				  "Unknown error"
-				: "";
 
 		const inputStyles = [
 			"h-[28px]",
@@ -68,9 +43,10 @@ export const TextInput = forwardRef<TextInputElement, TextInputProps>(
 			"font-200",
 			"text-20",
 			"leading-[24px]",
-			"placeholder:text-light2",
 			"hover:bg-light1",
-			error ? "placeholder:text-red text-red" : "",
+			error
+				? "placeholder:text-red text-red"
+				: "placeholder:text-light2 text-white",
 		].join(" ");
 
 		return (
@@ -81,7 +57,7 @@ export const TextInput = forwardRef<TextInputElement, TextInputProps>(
 			>
 				<InputWrapper
 					label={label}
-					error={errorWithPattern}
+					error={error}
 					required={required}
 					disabled={disabled}
 					showError={!!errors}

@@ -54,26 +54,23 @@ export const InputWrapper = forwardRef<InputWrapperElement, InputWrapperProps>(
 				ref={ref}
 				{...rest}
 			>
-				{label && (
-					<div className={labelStyles}>
-						<p>{labelString}</p>
-					</div>
-				)}
-				<div className="flex flex-col">
+				{label && <p className={labelStyles}>{labelString}</p>}
+				<div className="relative">
 					{children}
 					{showError && (
-						<div className="flex gap-[4px] items-center justify-end text-right">
+						<div className="flex gap-[4px] items-center justify-end absolute top-[30px] right-0">
 							{error && (
 								<Image
 									src="/svg/cross.svg"
 									alt="cross"
 									width={18}
 									height={18}
+									className=""
 								/>
 							)}
 							<p
-								className="text-red text-12 font-200 text-cap text-justify
-					 leading-[24px] tracking-[2.4px] w-[280px] md:w-[222px] xl:w-[268px]"
+								className=" text-red text-12 font-200
+								text-cap leading-[24px] tracking-[2.4px]"
 							>
 								{error}
 							</p>

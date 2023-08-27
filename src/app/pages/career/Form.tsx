@@ -32,7 +32,7 @@ export function Form() {
 		watch,
 		formState: { errors },
 	} = useForm<FormFields>({
-		mode: "onSubmit",
+		mode: "onChange",
 		defaultValues: {
 			fullName: "",
 			email: "",
@@ -42,6 +42,9 @@ export function Form() {
 			consent: false,
 		},
 	});
+
+	console.log(errors);
+
 	const watchConsent = watch("consent");
 	const watchFullName = watch("fullName");
 	const watchEmail = watch("email");
@@ -62,7 +65,10 @@ export function Form() {
 				register: () =>
 					register(field.fullName.name, {
 						required: required,
-						pattern: new RegExp(field.fullName.pattern),
+						pattern: {
+							value: new RegExp(field.fullName.pattern),
+							message: field.fullName.message,
+						},
 					}),
 			},
 			email: {
@@ -75,7 +81,10 @@ export function Form() {
 				register: () =>
 					register(field.email.name, {
 						required: required,
-						pattern: new RegExp(field.email.pattern),
+						pattern: {
+							value: new RegExp(field.email.pattern),
+							message: field.email.message,
+						},
 					}),
 			},
 			phone: {
@@ -88,7 +97,10 @@ export function Form() {
 				register: () =>
 					register(field.phone.name, {
 						required: required,
-						pattern: new RegExp(field.phone.pattern),
+						pattern: {
+							value: new RegExp(field.phone.pattern),
+							message: field.phone.message,
+						},
 					}),
 			},
 			position: {
@@ -101,7 +113,10 @@ export function Form() {
 				register: () =>
 					register(field.position.name, {
 						required: required,
-						pattern: new RegExp(field.position.pattern),
+						pattern: {
+							value: new RegExp(field.position.pattern),
+							message: field.position.message,
+						},
 					}),
 			},
 			message: {
@@ -113,7 +128,10 @@ export function Form() {
 				required: true,
 				register: () =>
 					register(field.message.name, {
-						pattern: new RegExp(field.message.pattern),
+						pattern: {
+							value: new RegExp(field.message.pattern),
+							message: field.message.message,
+						},
 					}),
 			},
 			consent: {
@@ -212,7 +230,7 @@ export function Form() {
 					!watchPosition ||
 					!isValidFixed
 				}
-				className="md:absolute md:right-0 md:bottom-[10px] xl:bottom-[-12px] uppercase"
+				className="pt-[30px] md:pt-0 md:absolute md:right-0 md:bottom-[-30px] xl:bottom-[-12px] uppercase"
 			>
 				{button}
 			</Button>

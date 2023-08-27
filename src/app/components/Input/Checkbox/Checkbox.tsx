@@ -39,8 +39,8 @@ export function Checkbox(
 			showError={!!errors}
 		>
 			<div
-				className="flex items-center md:ml-[-125px] md:mt-[-10px]
-			xl:absolute xl:bottom-[-20px] xl:left-[140px] w-[259px] md:w-[222px] xl:w-[290px]"
+				className="flex items-center absolute bottom-[-30px] left-[-140px]
+			md:left-[-236px] xl:bottom-[-15px] xl:left-[-300px] w-[259px] md:w-[222px] xl:w-[290px]"
 			>
 				<label className="flex items-start gap-[8px] cursor-pointer">
 					<input

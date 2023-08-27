@@ -154,7 +154,8 @@
 					"placeholder": "johnsmith@email.com",
 					"pattern": "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,3}$",
 					"type": "text",
-					"inputMode": "email"
+					"inputMode": "email",
+					"message": "Incorrect email"
 				},
 				"phone": {
 					"name": "phone",
@@ -162,7 +163,8 @@
 					"placeholder": "+38 (097) 12 34 567",
 					"pattern": "^(?:(?:\\+380|0)[.-]?\\d{2}[.-]?\\d{2}[.-]?\\d{2}[.-]?\\d{3}|\\d{10})$",
 					"type": "text",
-					"inputMode": "tel"
+					"inputMode": "tel",
+					"message": "Incorrect phone"
 				},
 				"position": {
 					"name": "position",
@@ -170,7 +172,8 @@
 					"placeholder": "Movie maker",
 					"pattern": "^[a-zA-Z]",
 					"type": "text",
-					"inputMode": "text"
+					"inputMode": "text",
+					"message": "Incorrect position"
 				},
 				"message": {
 					"name": "message",
@@ -178,7 +181,8 @@
 					"placeholder": "",
 					"pattern": "^[a-zA-Z]",
 					"type": "message",
-					"inputMode": "text"
+					"inputMode": "text",
+					"message": "Incorrect message"
 				},
 				"consent": {
 					"name": "consent",
@@ -192,7 +196,8 @@
 					"placeholder": "John Smith",
 					"pattern": "^[a-zA-Z]+\\s[a-zA-Z]+$",
 					"type": "text",
-					"inputMode": "text"
+					"inputMode": "text",
+					"message": "Incorrect full name"
 				}
 			},
 			"required": "This field is required",
@@ -247,7 +252,8 @@
 					"placeholder": "johnsmith@email.com",
 					"pattern": "^[a-zA-Z0-9]+@[a-zA-Z]+\\.[a-zA-Z]{2,3}$",
 					"type": "text",
-					"inputMode": "email"
+					"inputMode": "email",
+					"message": "Incorrect email"
 				},
 				"message": {
 					"name": "message",
@@ -255,7 +261,8 @@
 					"placeholder": "",
 					"pattern": "^[a-zA-Z]",
 					"type": "message",
-					"inputMode": "text"
+					"inputMode": "text",
+					"message": "Incorrect message"
 				},
 				"fullName": {
 					"name": "fullName",
@@ -263,7 +270,8 @@
 					"placeholder": "John Smith",
 					"pattern": "^[a-zA-Z]+\\s[a-zA-Z]+$",
 					"type": "text",
-					"inputMode": "text"
+					"inputMode": "text",
+					"message": "Incorrect full name"
 				}
 			},
 			"required": "This field is required",

@@ -31,7 +31,7 @@ export function Form() {
 		watch,
 		formState: { errors },
 	} = useForm<FormFields>({
-		mode: "onSubmit",
+		mode: "onChange",
 		defaultValues: {
 			fullName: "",
 			email: "",
@@ -51,7 +51,10 @@ export function Form() {
 				register: () =>
 					register(field.fullName.name, {
 						required: required,
-						pattern: new RegExp(field.fullName.pattern),
+						pattern: {
+							value: new RegExp(field.fullName.pattern),
+							message: field.fullName.message,
+						},
 					}),
 			},
 			email: {
@@ -64,7 +67,10 @@ export function Form() {
 				register: () =>
 					register(field.email.name, {
 						required: required,
-						pattern: new RegExp(field.email.pattern),
+						pattern: {
+							value: new RegExp(field.email.pattern),
+							message: field.email.message,
+						},
 					}),
 			},
 			message: {
@@ -76,7 +82,10 @@ export function Form() {
 				required: true,
 				register: () =>
 					register(field.message.name, {
-						pattern: new RegExp(field.message.pattern),
+						pattern: {
+							value: new RegExp(field.message.pattern),
+							message: field.message.message,
+						},
 					}),
 			},
 		}),
