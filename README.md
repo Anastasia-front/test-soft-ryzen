@@ -2,6 +2,16 @@
 
 This site is intended primarily for lovers of our Ukrainian Carpathians and outdoor activities.
 
+## Table of Contents
+
+- [Project overview](#project-overview)
+- [Technologies and libraries used](#technologies-and-libraries-used)
+- [Implemented in the project the following functionality](#implemented-in-the-project-the-following-functionality)
+- [Default documentation of Next.js](#default-documentation-of-nextjs)
+  - [Getting Started](#getting-started)
+  - [Learn More](#learn-more)
+  - [Deploy on Vercel](#deploy-on-vercel)
+
 ## Project overview
 
 With its help, the CarpTravel company provides information about its services, as well as provides an opportunity for clients to communicate with the agency and cooperate with the company as an employee.
@@ -10,7 +20,7 @@ With its help, the CarpTravel company provides information about its services, a
 
 The project was implemented using the following technologies and libraries:
 
-![Next.js](https://img.shields.io/badge/Next.js-13.4.18-red) ![Typescript](https://img.shields.io/badge/Typescript-5.1.6-olive) ![Tailwindcss](https://img.shields.io/badge/Tailwindcss-3.3.3-palegreen) ![React](https://img.shields.io/badge/React.js-"18.2.0-teal) ![React-dom](https://img.shields.io/badge/React-dom-18.2.0-lightgpink) ![React-hook-form](https://img.shields.io/badge/React-hook-form-7.45.4-orange) ![React-scroll](https://img.shields.io/badge/React-scroll-1.8.9-khaki) [React-responsive](https://img.shields.io/badge/React-responsive-9.0.2-orangered) ![Framer-motion](https://img.shields.io/badge/Framer-motion-10.16.1-yellow) ![Keen-slider](https://img.shields.io/badge/Keen-slider-6.8.6-purple) ![Clsx](https://img.shields.io/badge/Clsx-2.0.0-aqua) ![Sass](https://img.shields.io/badge/Sass-1.66.0-blueviolet) ![Postcss](https://img.shields.io/badge/Postcss-8.4.28-moccasin)
+![Next.js](https://img.shields.io/badge/Next.js-13.4.18-red) ![Typescript](https://img.shields.io/badge/Typescript-5.1.6-yellow) ![Tailwindcss](https://img.shields.io/badge/Tailwindcss-3.3.3-palegreen) ![React](https://img.shields.io/badge/React.js-18.2.0-teal) ![React-dom](https://img.shields.io/badge/React%20dom-18.2.0-lightgpink) ![React-hook-form](https://img.shields.io/badge/React%20hook%20form-7.45.4-orange) ![React-scroll](https://img.shields.io/badge/React%20scroll-1.8.9-khaki) [React-responsive](https://img.shields.io/badge/React%20responsive-9.0.2-orangered) ![Framer-motion](https://img.shields.io/badge/Framer%20motion-10.16.1-yellow) ![Keen-slider](https://img.shields.io/badge/Keen%20slider-6.8.6-purple) ![Clsx](https://img.shields.io/badge/Clsx-2.0.0-darkturquoise) ![Sass](https://img.shields.io/badge/Sass-1.66.0-blueviolet) ![Postcss](https://img.shields.io/badge/Postcss-8.4.28-moccasin)
 
 ## Implemented in the project the following functionality
 
@@ -24,23 +34,11 @@ The project was implemented using the following technologies and libraries:
 </p>
 </li>
 <li>
-<p>site navigation
-</p>
-</li>
-<li>
-<p>sending information using forms (validation is present)
-</p>
-</li>
-<li>
 <p>various sliders
 </p>
 </li>
 <li>
-<p>the ability to add localization and internationalization (L10n and i18n)
-</p>
-</li>
-<li>
-<p>easy content management (find all text in the text.json file)
+<p>site navigation
 </p>
 </li>
 <li>
@@ -51,9 +49,21 @@ The project was implemented using the following technologies and libraries:
 <p> resource loading is optimized
 </p>
 </li>
+<li>
+<p>sending information using forms (validation is present)
+</p>
+</li>
+<li>
+<p>easy content management (find all text in the text.json file)
+</p>
+</li>
+<li>
+<p>the ability to add localization and internationalization (L10n and i18n)
+</p>
+</li>
 </ul>
 
-### Default documentation of Next.js
+# Default documentation of Next.js
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
