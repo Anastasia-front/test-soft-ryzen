@@ -1,3 +1,60 @@
+# CarpTravel website
+
+This site is intended primarily for lovers of our Ukrainian Carpathians and outdoor activities.
+
+## Project overview
+
+With its help, the CarpTravel company provides information about its services, as well as provides an opportunity for clients to communicate with the agency and cooperate with the company as an employee.
+
+## Technologies and libraries used
+
+The project was implemented using the following technologies and libraries:
+
+![Next.js](https://img.shields.io/badge/Next.js-13.4.18-red) ![Typescript](https://img.shields.io/badge/Typescript-5.1.6-olive) ![Tailwindcss](https://img.shields.io/badge/Tailwindcss-3.3.3-palegreen) ![React](https://img.shields.io/badge/React.js-"18.2.0-teal) ![React-dom](https://img.shields.io/badge/React-dom-18.2.0-lightgpink) ![React-hook-form](https://img.shields.io/badge/React-hook-form-7.45.4-orange) ![React-scroll](https://img.shields.io/badge/React-scroll-1.8.9-khaki) [React-responsive](https://img.shields.io/badge/React-responsive-9.0.2-orangered) ![Framer-motion](https://img.shields.io/badge/Framer-motion-10.16.1-yellow) ![Keen-slider](https://img.shields.io/badge/Keen-slider-6.8.6-purple) ![Clsx](https://img.shields.io/badge/Clsx-2.0.0-aqua) ![Sass](https://img.shields.io/badge/Sass-1.66.0-blueviolet) ![Postcss](https://img.shields.io/badge/Postcss-8.4.28-moccasin)
+
+## Implemented in the project the following functionality
+
+<ul>
+<li>
+<p>SEO
+</p>
+</li>
+<li>
+<p>adaptive layout
+</p>
+</li>
+<li>
+<p>site navigation
+</p>
+</li>
+<li>
+<p>sending information using forms (validation is present)
+</p>
+</li>
+<li>
+<p>various sliders
+</p>
+</li>
+<li>
+<p>the ability to add localization and internationalization (L10n and i18n)
+</p>
+</li>
+<li>
+<p>easy content management (find all text in the text.json file)
+</p>
+</li>
+<li>
+<p>improved accessibility
+</p>
+</li>
+<li>
+<p> resource loading is optimized
+</p>
+</li>
+</ul>
+
+### Default documentation of Next.js
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
