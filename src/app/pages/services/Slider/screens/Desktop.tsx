@@ -43,8 +43,8 @@ export function Desktop({ number, handleActivityClick }: SlideProps) {
 						className=" max-w-[607px] h-auto"
 					/>
 					<div className="flex flex-col items-start text.content-between gap-[20px] justify-between min-w-[50%]">
-						<div className="flex gap-[60px]">
-							<ul className="flex flex-col gap-[24px] items-left uppercase text-28 text-light2 leading-[24px] max-w-[250px]">
+						<div className="flex gap-[100px]">
+							<ul className="flex flex-col gap-[24px] items-left uppercase text-28 text-light2 leading-[24px] max-w-[210px]">
 								{handleActivityClick()}
 							</ul>
 							<p className="self-right text-12 font-200 leading-[24px] tracking-[2.4px] sm:text-14">

@@ -47,8 +47,6 @@ export function Form() {
 		},
 	});
 
-	console.log(errors);
-
 	const watchConsent = watch("consent");
 	const watchFullName = watch("fullName");
 	const watchEmail = watch("email");
