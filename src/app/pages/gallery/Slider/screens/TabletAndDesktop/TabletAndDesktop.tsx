@@ -162,13 +162,13 @@ export function TabletAndDesktop() {
 
 			<div className="flex justify-between md:w-[90%] xl:w-[67%] absolute bottom-[15px] xl:bottom-[-12px]">
 				<Button
-					className="uppercase text-33 font-100 leading-normal"
+					className="text-33 font-100 leading-normal"
 					onClick={() => paginate(-1)}
 				>
 					{text.back}
 				</Button>
 				<Button
-					className="uppercase text-33 font-100 leading-normal"
+					className="text-33 font-100 leading-normal"
 					onClick={() => paginate(1)}
 				>
 					{text.next}

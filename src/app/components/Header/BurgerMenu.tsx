@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { Navigation } from "@/app/components/Header/Navigation";
 
+import { Button } from "../Button/Button";
 import { ModalPortal } from "../Modal/ModalPortal";
 
 export function BurgerMenu() {
@@ -15,13 +16,13 @@ export function BurgerMenu() {
 		setOpen(false);
 	};
 	return !open ? (
-		<button
-			type="button"
-			className="uppercase font-400 text-14 tracking-[1.4px]"
+		<Button
+			section="header"
+			className="font-400 text-14 tracking-[1.4px]"
 			onClick={onOpenMenu}
 		>
 			MENU
-		</button>
+		</Button>
 	) : (
 		<ModalPortal onCloseMenu={onCloseMenu}>
 			<Navigation onCloseMenu={onCloseMenu} />

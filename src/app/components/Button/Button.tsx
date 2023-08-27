@@ -6,7 +6,7 @@ type ButtonElement = HTMLElementTagNameMap["button"];
 interface ButtonProps extends React.HTMLAttributes<ButtonElement> {
 	disabled?: boolean;
 	type?: "submit" | "button";
-	section?: "services";
+	section?: "services" | "header" | "modal";
 	submit?: boolean;
 	className?: string;
 }
@@ -25,8 +25,9 @@ export const Button = forwardRef<ButtonElement, ButtonProps>(
 		ref
 	) => {
 		const componentClass = [
+			"uppercase",
 			type === "submit" && "text-30 font-500 self-right xl:text-32",
-			type === "button" && section !== "services" && "text-33 font-100",
+			type === "button" && !section && "text-33 font-100",
 			section === "services" &&
 				"text-20 flex gap-[8px] items-center justify-start text-left",
 			disabled && "text-light2 hover:shadow-none",

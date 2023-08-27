@@ -16,11 +16,17 @@ export function TabletAndDesktop() {
 	return (
 		<div className="flex flex-col gap-[12px]">
 			<div className="flex gap-[24px] justify-between items-center">
-				<h2 className="text-67 xl:text-98 font-100 leading-[56px] md:leading-[81px] xl:leading-normal tracking-[-2.68px] xl:tracking-[-3.92px] uppercase">
+				<h2
+					className="text-67 xl:text-98 font-100 leading-[56px] md:leading-[81px] xl:leading-normal
+				tracking-[-2.68px] xl:tracking-[-3.92px] uppercase"
+				>
 					{text.title.thinText}{" "}
 					<span className="font-500">{text.title.boldText}</span>
 				</h2>
-				<p className="text-left xl:text-justify text-13 xl:text-18 font-200 leading-[20px] xl:leading-[24px] max-w-[222px] xl:max-w-[293px]">
+				<p
+					className="text-left xl:text-justify text-13 xl:text-18 font-200 leading-[20px]
+				xl:leading-[24px] max-w-[222px] xl:max-w-[293px]"
+				>
 					{text.chance}
 				</p>
 			</div>

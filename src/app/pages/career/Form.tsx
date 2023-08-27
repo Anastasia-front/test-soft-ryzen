@@ -230,7 +230,7 @@ export function Form() {
 					!watchPosition ||
 					!isValidFixed
 				}
-				className="pt-[30px] md:pt-0 md:absolute md:right-0 md:bottom-[-30px] xl:bottom-[-12px] uppercase"
+				className="pt-[30px] md:pt-0 md:absolute md:right-0 md:bottom-[-30px] xl:bottom-[-12px]"
 			>
 				{button}
 			</Button>

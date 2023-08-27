@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 
 import { useKeyPress } from "@/app/hooks/useKeyPress";
+import { Button } from "../Button/Button";
 
 interface ModalProps {
 	className?: string;
@@ -26,13 +27,13 @@ export function ModalPortal({ onCloseMenu, className, children }: ModalProps) {
 			flex justify-center items-center z-50 ${bgOverlay}`}
 			onClick={onCloseMenu}
 		>
-			<button
-				type="button"
-				className="uppercase z-40 font-400 text-14 tracking-[1.4px] absolute top-[43px] right-[20px]"
+			<Button
+				section="modal"
+				className="z-40 font-400 text-14 tracking-[1.4px] absolute top-[43px] right-[20px]"
 				onClick={onCloseMenu}
 			>
 				CLOSE
-			</button>
+			</Button>
 			{children}
 		</div>
 	);

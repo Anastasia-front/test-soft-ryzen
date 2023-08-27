@@ -155,7 +155,7 @@ export function Form() {
 				type="submit"
 				submit
 				disabled={!isValidFixed || !watchFullName || !watchEmail}
-				className="self-end uppercase"
+				className="self-end"
 			>
 				{button}
 			</Button>
