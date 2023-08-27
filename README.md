@@ -20,7 +20,7 @@ With its help, the CarpTravel company provides information about its services, a
 
 The project was implemented using the following technologies and libraries:
 
-![Next.js](https://img.shields.io/badge/Next.js-13.4.18-red) ![Typescript](https://img.shields.io/badge/Typescript-5.1.6-yellow) ![Tailwindcss](https://img.shields.io/badge/Tailwindcss-3.3.3-palegreen) ![React](https://img.shields.io/badge/React.js-18.2.0-teal) ![React-dom](https://img.shields.io/badge/React%20dom-18.2.0-lightgpink) ![React-hook-form](https://img.shields.io/badge/React%20hook%20form-7.45.4-orange) ![React-scroll](https://img.shields.io/badge/React%20scroll-1.8.9-khaki) [React-responsive](https://img.shields.io/badge/React%20responsive-9.0.2-orangered) ![Framer-motion](https://img.shields.io/badge/Framer%20motion-10.16.1-yellow) ![Keen-slider](https://img.shields.io/badge/Keen%20slider-6.8.6-purple) ![Clsx](https://img.shields.io/badge/Clsx-2.0.0-darkturquoise) ![Sass](https://img.shields.io/badge/Sass-1.66.0-blueviolet) ![Postcss](https://img.shields.io/badge/Postcss-8.4.28-moccasin)
+![Next.js](https://img.shields.io/badge/Next.js-13.4.18-red) ![Typescript](https://img.shields.io/badge/Typescript-5.1.6-yellow) ![Tailwindcss](https://img.shields.io/badge/Tailwindcss-3.3.3-palegreen) ![React](https://img.shields.io/badge/React.js-18.2.0-teal) ![React-dom](https://img.shields.io/badge/React%20dom-18.2.0-lightgpink) ![React-hook-form](https://img.shields.io/badge/React%20hook%20form-7.45.4-orange) ![React-scroll](https://img.shields.io/badge/React%20scroll-1.8.9-khaki) ![React-responsive](https://img.shields.io/badge/React%20responsive-9.0.2-orangered) ![Framer-motion](https://img.shields.io/badge/Framer%20motion-10.16.1-yellow) ![Keen-slider](https://img.shields.io/badge/Keen%20slider-6.8.6-purple) ![Clsx](https://img.shields.io/badge/Clsx-2.0.0-darkturquoise) ![Sass](https://img.shields.io/badge/Sass-1.66.0-blueviolet) ![Postcss](https://img.shields.io/badge/Postcss-8.4.28-moccasin)
 
 ## Implemented in the project the following functionality
 
@@ -30,7 +30,7 @@ The project was implemented using the following technologies and libraries:
 </p>
 </li>
 <li>
-<p>adaptive layout
+<p>site navigation
 </p>
 </li>
 <li>
@@ -38,7 +38,7 @@ The project was implemented using the following technologies and libraries:
 </p>
 </li>
 <li>
-<p>site navigation
+<p>adaptive layout
 </p>
 </li>
 <li>
