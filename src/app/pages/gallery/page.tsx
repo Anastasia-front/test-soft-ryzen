@@ -14,18 +14,17 @@ export default function Gallery() {
 	const text = textData.gallery;
 
 	return (
-		<Section
-			className={`${s.bg} flex flex-col gap-[24px] items-center`}
-			id="gallery"
-		>
-			<h2
-				className="text-40 md:text-67 xl:text-98 font-100 leading-[40px] md:leading-[81px] xl:leading-normal
+		<Section className={`${s.bg}`} id="gallery">
+			<div className="flex flex-col gap-[24px]">
+				<h2
+					className="text-40 md:text-67 xl:text-98 font-100 leading-[40px] md:leading-[81px] xl:leading-normal
 		    tracking-[-1.6px] md:tracking-[-2.68px] xl:tracking-[-3.92px] uppercase xl:self-start"
-			>
-				{text.title.thinText}{" "}
-				<span className="font-500">{text.title.boldText}</span>
-			</h2>
-			<Slider />
+				>
+					{text.title.thinText}{" "}
+					<span className="font-500">{text.title.boldText}</span>
+				</h2>
+				<Slider />
+			</div>
 		</Section>
 	);
 }
