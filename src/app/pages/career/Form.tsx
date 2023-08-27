@@ -13,6 +13,8 @@ import { Textarea } from "@/app/components/Textarea/Textarea";
 import { useText } from "@/app/context/TextDataContext";
 
 import { isObjectEmpty } from "@/app/helpers/isObjectEmpty";
+import { loadDataFromLocalStorage } from "@/app/helpers/loadDataFromLocalStorage";
+import { saveDataToLocalStorage } from "@/app/helpers/saveDataToLocalStorage";
 
 import { FormFields, FormFieldsData } from "@/app/types/formTypes";
 
@@ -25,6 +27,8 @@ export function Form() {
 	const button = textData.career.form.button;
 	const modal = textData.career.form.modal;
 
+	const savedFormData = loadDataFromLocalStorage("formDataCareer");
+
 	const {
 		register,
 		reset,
@@ -33,7 +37,7 @@ export function Form() {
 		formState: { errors },
 	} = useForm<FormFields>({
 		mode: "onChange",
-		defaultValues: {
+		defaultValues: savedFormData || {
 			fullName: "",
 			email: "",
 			phone: "",
@@ -158,6 +162,7 @@ export function Form() {
 	};
 
 	const onSubmit: SubmitHandler<FormFields> = async (data: FormFields) => {
+		saveDataToLocalStorage("formDataCareer", data);
 		console.log(data);
 		onOpenMenu();
 		reset();
