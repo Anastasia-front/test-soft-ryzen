@@ -13,6 +13,7 @@ import { useText } from "@/app/context/TextDataContext";
 
 import { Slide } from "./Slide";
 
+import { FadeInElement } from "@/app/components/FadeInElement/FadeInElement";
 import s from "./Slider.module.scss";
 
 interface ContentItem {
@@ -94,62 +95,67 @@ export function Slider() {
 	}, []);
 
 	return (
-		<div className={s.navigationWrapper}>
-			<div>
-				<div ref={sliderRef} className="keen-slider">
-					{text.content.map((item: ContentItem, index: number) => (
-						<div
-							key={index}
-							className={`keen-slider__slide bg-center bg-no-repeat bg-cover ${
-								bgClassNames[item.id]
-							}`}
-						>
-							<Slide number={index} handleActivityClick={handleActivityClick} />
-						</div>
-					))}
+		<FadeInElement>
+			<div className={s.navigationWrapper}>
+				<div>
+					<div ref={sliderRef} className="keen-slider">
+						{text.content.map((item: ContentItem, index: number) => (
+							<div
+								key={index}
+								className={`keen-slider__slide bg-center bg-no-repeat bg-cover ${
+									bgClassNames[item.id]
+								}`}
+							>
+								<Slide
+									number={index}
+									handleActivityClick={handleActivityClick}
+								/>
+							</div>
+						))}
+					</div>
+					{loaded && instanceRef.current && (
+						<>
+							<Arrow
+								left
+								onClick={(e: any) =>
+									e.stopPropagation() || instanceRef.current?.prev()
+								}
+								disabled={currentSlide === 0}
+							/>
+
+							<Arrow
+								onClick={(e: any) =>
+									e.stopPropagation() || instanceRef.current?.next()
+								}
+								disabled={
+									currentSlide ===
+									instanceRef.current.track.details.slides.length - 1
+								}
+							/>
+						</>
+					)}
 				</div>
 				{loaded && instanceRef.current && (
-					<>
-						<Arrow
-							left
-							onClick={(e: any) =>
-								e.stopPropagation() || instanceRef.current?.prev()
-							}
-							disabled={currentSlide === 0}
-						/>
-
-						<Arrow
-							onClick={(e: any) =>
-								e.stopPropagation() || instanceRef.current?.next()
-							}
-							disabled={
-								currentSlide ===
-								instanceRef.current.track.details.slides.length - 1
-							}
-						/>
-					</>
+					<div className={s.dots}>
+						{[
+							...Array(instanceRef.current.track.details.slides.length).keys(),
+						].map((idx) => {
+							return (
+								<Button
+									key={idx}
+									onClick={() => {
+										instanceRef.current?.moveToIdx(idx);
+									}}
+									className={
+										`${s.dot}` + (currentSlide === idx ? ` ${s.active}` : "")
+									}
+								></Button>
+							);
+						})}
+					</div>
 				)}
 			</div>
-			{loaded && instanceRef.current && (
-				<div className={s.dots}>
-					{[
-						...Array(instanceRef.current.track.details.slides.length).keys(),
-					].map((idx) => {
-						return (
-							<Button
-								key={idx}
-								onClick={() => {
-									instanceRef.current?.moveToIdx(idx);
-								}}
-								className={
-									`${s.dot}` + (currentSlide === idx ? ` ${s.active}` : "")
-								}
-							></Button>
-						);
-					})}
-				</div>
-			)}
-		</div>
+		</FadeInElement>
 	);
 }
 
