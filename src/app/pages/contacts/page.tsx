@@ -48,7 +48,7 @@ export default function Contacts() {
 							<li
 								key={contact.id}
 								className="flex gap-[20px] last:flex-row-reverse
-							xl:last:flex-row first:pr-0 last:pr-[15px] md:last:pr-[145px] pr-[46px]
+							xl:last:flex-row first:pr-0 last:pr-0 md:last:pr-[145px] pr-[38px]
 							xl:last:pt-[60px] xl:last:pr-[28px] xl:w-[300px] xl:justify-end"
 							>
 								<ul>
