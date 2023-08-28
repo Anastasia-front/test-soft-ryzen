@@ -12,7 +12,7 @@ export function TextDataProvider({ children }: { children: React.ReactNode }) {
 	return (
 		<TextDataContext.Provider value={textData}>
 			{loading ? (
-				<div className="flex w-[300px] s:w-full px-[10px] items-center justify-center h-[100vh] gap-[50px]">
+				<div className="flex px-[10px] items-center justify-center h-[100vh] gap-[50px]">
 					<span className="loader"></span>
 					<p className="font-300 text-20 md:text-30 xl:text-40 tracking-tight">
 						Please wait while the page is loading...
