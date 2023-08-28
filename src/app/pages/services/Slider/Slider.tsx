@@ -1,19 +1,18 @@
 "use client";
 
-import Image from "next/image";
-
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
 import { Button } from "@/app/components/Button/Button";
+import { Container } from "@/app/components/Container/Container";
+// import { FadeInElement } from "@/app/components/FadeInElement/FadeInElement";
 
 import { useText } from "@/app/context/TextDataContext";
 
 import { Slide } from "./Slide";
 
-import { FadeInElement } from "@/app/components/FadeInElement/FadeInElement";
 import s from "./Slider.module.scss";
 
 interface ContentItem {
@@ -51,68 +50,46 @@ export function Slider() {
 		5: s.bg2,
 	};
 
-	const handleActivityClick = () => {
-		return (
-			loaded &&
-			instanceRef.current && (
-				<>
-					{text.activities.map((activity: { id: number; name: string }) => {
-						return (
-							<li
-								key={activity.id}
-								className={`${
-									currentSlide === activity.id - 1
-										? "font-500 text-white"
-										: "font-200"
-								}`}
-							>
-								<Button
-									onClick={() => {
-										instanceRef.current?.moveToIdx(activity.id - 1);
-									}}
-									section="services"
-								>
-									{currentSlide === activity.id - 1 && (
-										<Image
-											src="/svg/rhombus.svg"
-											alt="rhombus"
-											width={6}
-											height={6}
-										/>
-									)}
-									{activity.name}
-								</Button>
-							</li>
-						);
-					})}
-				</>
-			)
-		);
-	};
-
-	useEffect(() => {
-		handleActivityClick();
-	}, []);
-
 	return (
-		<FadeInElement>
-			<div className={s.navigationWrapper}>
-				<div>
-					<div ref={sliderRef} className="keen-slider">
-						{text.content.map((item: ContentItem, index: number) => (
-							<div
-								key={index}
-								className={`keen-slider__slide bg-center bg-no-repeat bg-cover ${
-									bgClassNames[item.id]
-								}`}
-							>
-								<Slide
-									number={index}
-									handleActivityClick={handleActivityClick}
-								/>
-							</div>
-						))}
-					</div>
+		// <FadeInElement>
+		<>
+			<div>
+				<div ref={sliderRef} className="keen-slider w-[100vw]">
+					{text.content.map((item: ContentItem, index: number) => (
+						<div
+							key={index}
+							className={`keen-slider__slide bg-center bg-no-repeat bg-cover ${
+								bgClassNames[item.id]
+							}`}
+						>
+							<Slide number={index} />
+						</div>
+					))}
+				</div>
+				<Container className="relative">
+					{loaded && instanceRef.current && (
+						<ul className={s.buttons}>
+							{text.activities.map(
+								(activity: { id: number; name: string }, idx: number) => (
+									<li
+										key={idx}
+										className={`${s.button} ${
+											currentSlide === activity.id - 1 && s.active
+										}`}
+									>
+										<Button
+											section="services"
+											onClick={() => {
+												instanceRef.current?.moveToIdx(idx);
+											}}
+										>
+											{activity.name}
+										</Button>
+									</li>
+								)
+							)}
+						</ul>
+					)}
 					{loaded && instanceRef.current && (
 						<>
 							<Arrow
@@ -134,28 +111,30 @@ export function Slider() {
 							/>
 						</>
 					)}
-				</div>
-				{loaded && instanceRef.current && (
-					<div className={s.dots}>
-						{[
-							...Array(instanceRef.current.track.details.slides.length).keys(),
-						].map((idx) => {
-							return (
-								<Button
-									key={idx}
-									onClick={() => {
-										instanceRef.current?.moveToIdx(idx);
-									}}
-									className={
-										`${s.dot}` + (currentSlide === idx ? ` ${s.active}` : "")
-									}
-								></Button>
-							);
-						})}
-					</div>
-				)}
+					{loaded && instanceRef.current && (
+						<ul className={s.dots}>
+							{[
+								...Array(
+									instanceRef.current.track.details.slides.length
+								).keys(),
+							].map((idx) => {
+								return (
+									<li key={idx} className="p-5px">
+										<Button
+											onClick={() => {
+												instanceRef.current?.moveToIdx(idx);
+											}}
+											className={`${s.dot} ${currentSlide === idx && s.active}`}
+										></Button>
+									</li>
+								);
+							})}
+						</ul>
+					)}
+				</Container>
 			</div>
-		</FadeInElement>
+		</>
+		// </FadeInElement>
 	);
 }
 

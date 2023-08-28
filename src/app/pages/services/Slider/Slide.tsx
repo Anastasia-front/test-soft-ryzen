@@ -6,18 +6,13 @@ import { Desktop } from "./screens/Desktop";
 import { Mobile } from "./screens/Mobile";
 import { Tablet } from "./screens/Tablet";
 
-export interface SlideProps {
-	number: number;
-	handleActivityClick: () => React.ReactNode | null;
-}
-
-export function Slide({ number, handleActivityClick }: SlideProps) {
+export function Slide({ number }: { number: number }) {
 	const { isScreenTabletSm, isScreenTabletXl } = useScreenQuery();
 	return isScreenTabletXl ? (
-		<Desktop number={number} handleActivityClick={handleActivityClick} />
+		<Desktop number={number} />
 	) : isScreenTabletSm ? (
-		<Tablet number={number} handleActivityClick={handleActivityClick} />
+		<Tablet number={number} />
 	) : (
-		<Mobile number={number} handleActivityClick={handleActivityClick} />
+		<Mobile number={number} />
 	);
 }

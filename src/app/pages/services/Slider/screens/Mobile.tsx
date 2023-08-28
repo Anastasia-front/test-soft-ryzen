@@ -6,11 +6,9 @@ import { useText } from "@/app/context/TextDataContext";
 
 import { images } from "../data/images";
 
-import { SlideProps } from "../Slide";
-
 import s from "../Slider.module.scss";
 
-export function Mobile({ number, handleActivityClick }: SlideProps) {
+export function Mobile({ number }: { number: number }) {
 	const textData = useText();
 
 	const text = textData.services;
@@ -19,7 +17,7 @@ export function Mobile({ number, handleActivityClick }: SlideProps) {
 
 	return (
 		<Section className={s.bgOverlay} id="services">
-			<div className="min-h-[739px] flex flex-col justify-between items-center gap-[50px]">
+			<div className="min-h-[760px] flex flex-col justify-between items-center gap-[50px]">
 				<div className="flex flex-col gap-[24px] w-full">
 					<h2 className="text-40 font-100 uppercase leading-[56px] tracking-[-1.6px] items-start">
 						{text.content[number].titlePartThin}
@@ -44,14 +42,8 @@ export function Mobile({ number, handleActivityClick }: SlideProps) {
 							{text.content[number].subtitle}
 						</p>
 					</div>
-					<ul
-						className="flex flex-col gap-[16px] items-left uppercase  text-light2
-					leading-[17px] max-w-[185px] sm:text-22 sm:leading-[26px] sm:max-w-[270px]"
-					>
-						{handleActivityClick()}
-					</ul>
 				</div>
-				<h6 className="text-14 font-200 leading-[20px] max-w-[500px] sm:text-18">
+				<h6 className="text-14 font-200 leading-[20px] max-w-[500px] sm:text-16">
 					{text.content[number].description}
 				</h6>
 			</div>

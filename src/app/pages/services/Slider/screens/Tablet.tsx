@@ -6,11 +6,9 @@ import { useText } from "@/app/context/TextDataContext";
 
 import { images } from "../data/images";
 
-import { SlideProps } from "../Slide";
-
 import s from "../Slider.module.scss";
 
-export function Tablet({ number, handleActivityClick }: SlideProps) {
+export function Tablet({ number }: { number: number }) {
 	const textData = useText();
 
 	const text = textData.services;
@@ -42,16 +40,10 @@ export function Tablet({ number, handleActivityClick }: SlideProps) {
 						height={370}
 						className="h-auto min-w-[463px]"
 					/>
-					<div className="flex flex-col items-start text.content-between gap-[20px] justify-between">
-						<div className="flex flex-col gap-[25px]">
-							<ul className="flex flex-col gap-[16px] items-left uppercase text-22 text-light2 leading-[18px] max-w-[185px]">
-								{handleActivityClick()}
-							</ul>
-							<p className="self-right text-12 font-200 leading-[24px] tracking-[2.4px] sm:text-14">
-								{text.content[number].subtitle}
-							</p>
-						</div>
-
+					<div className="flex flex-col items-start gap-[10px] justify-end h-[360px]">
+						<p className="self-right text-12 font-200 leading-[24px] tracking-[2.4px] sm:text-14">
+							{text.content[number].subtitle}
+						</p>
 						<h6 className="text-13 font-200 leading-[20px] max-w-[700px]">
 							{text.content[number].description}
 						</h6>

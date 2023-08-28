@@ -13,7 +13,7 @@ import { Textarea } from "@/app/components/Textarea/Textarea";
 import { useText } from "@/app/context/TextDataContext";
 
 import { isObjectEmpty } from "@/app/helpers/isObjectEmpty";
-import { loadDataFromLocalStorage } from "@/app/helpers/loadDataFromLocalStorage";
+// import { loadDataFromLocalStorage } from "@/app/helpers/loadDataFromLocalStorage";
 import { saveDataToLocalStorage } from "@/app/helpers/saveDataToLocalStorage";
 
 import { FormFields, FormFieldsData } from "@/app/types/formTypes";
@@ -27,7 +27,7 @@ export function Form() {
 	const button = textData.career.form.button;
 	const modal = textData.career.form.modal;
 
-	const savedFormData = loadDataFromLocalStorage("formDataCareer");
+	// const savedFormData = loadDataFromLocalStorage("formDataCareer");
 
 	const {
 		register,
@@ -37,14 +37,16 @@ export function Form() {
 		formState: { errors },
 	} = useForm<FormFields>({
 		mode: "onChange",
-		defaultValues: savedFormData || {
-			fullName: "",
-			email: "",
-			phone: "",
-			position: "",
-			message: "",
-			consent: false,
-		},
+		defaultValues:
+			// savedFormData ||
+			{
+				fullName: "",
+				email: "",
+				phone: "",
+				position: "",
+				message: "",
+				consent: false,
+			},
 	});
 
 	const watchConsent = watch("consent");

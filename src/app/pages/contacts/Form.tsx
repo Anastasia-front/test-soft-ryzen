@@ -12,7 +12,7 @@ import { Textarea } from "@/app/components/Textarea/Textarea";
 import { useText } from "@/app/context/TextDataContext";
 
 import { isObjectEmpty } from "@/app/helpers/isObjectEmpty";
-import { loadDataFromLocalStorage } from "@/app/helpers/loadDataFromLocalStorage";
+// import { loadDataFromLocalStorage } from "@/app/helpers/loadDataFromLocalStorage";
 import { saveDataToLocalStorage } from "@/app/helpers/saveDataToLocalStorage";
 
 import { FormFields, FormFieldsData } from "@/app/types/formTypes";
@@ -26,7 +26,7 @@ export function Form() {
 	const button = textData.contacts.form.button;
 	const modal = textData.contacts.form.modal;
 
-	const savedFormData = loadDataFromLocalStorage("formDataContacts");
+	// const savedFormData = loadDataFromLocalStorage("formDataContacts");
 
 	const {
 		register,
@@ -36,11 +36,13 @@ export function Form() {
 		formState: { errors },
 	} = useForm<FormFields>({
 		mode: "onChange",
-		defaultValues: savedFormData || {
-			fullName: "",
-			email: "",
-			message: "",
-		},
+		defaultValues:
+			// savedFormData ||
+			{
+				fullName: "",
+				email: "",
+				message: "",
+			},
 	});
 
 	const formFieldsData: FormFieldsData = useMemo(

@@ -118,14 +118,10 @@
 	}
 }
 
-.navigationWrapper {
-	position: relative;
-}
-
 .dots {
 	display: flex;
 	position: absolute;
-	bottom: -1%;
+	bottom: -20px;
 	left: 50%;
 	justify-content: center;
 	padding: 10px 0;
@@ -145,41 +141,88 @@
 	border-radius: 50%;
 	cursor: pointer;
 	background: rgba(255, 255, 255, 0.3);
+	&:focus {
+		outline: none;
+	}
+	&.active {
+		background: #c5c5c5;
+	}
 }
 
-.dot:focus {
-	outline: none;
+.buttons {
+	display: flex;
+	position: absolute;
+	top: -390px;
+	left: 0;
+	flex-direction: column;
+	max-width: 185px;
+	color: rgba(255, 255, 255, 0.2);
+	line-height: 17px;
+	text-transform: uppercase;
+	gap: 16px;
+
+	@media (min-width: 400px) {
+		max-width: 200px;
+		font-size: 22px;
+		line-height: 20px;
+		gap: 13px;
+	}
+	@media (min-width: 768px) {
+		top: -424px;
+		left: 482px;
+	}
+	@media (min-width: 1280px) {
+		top: -520px;
+		left: 635px;
+		line-height: 28px;
+		gap: 20px;
+	}
 }
 
-.active {
-	width: 10px;
-	height: 10px;
-	margin: 0 5px;
-	padding: 5px;
-	border: none;
-	border-radius: 50%;
-	cursor: pointer;
-	background: #c5c5c5;
+.button {
+	display: flex;
+	position: relative;
+	align-items: center;
+	font-weight: 200;
+	&:focus {
+		outline: none;
+	}
+	&.active {
+		color: #fff;
+		font-weight: 500;
+		&::before {
+			display: block;
+			width: 9px;
+			height: 9px;
+			padding-left: 14px;
+			content: "";
+			background-image: url("../../../../../public/svg/rhombus.svg");
+			background-repeat: no-repeat;
+		}
+	}
 }
 
 .arrow {
 	position: absolute;
-	top: 125px;
+	top: -745px;
 	width: 50px;
 	height: 100px;
 	cursor: pointer;
 	fill: #fff;
 	@media screen and (min-width: 768px) {
-		top: 50%;
+		top: -350px;
 	}
 }
 
 .arrowLeft {
 	left: 0;
+	@media screen and (min-width: 768px) {
+		left: -60px;
+	}
 }
 
 .arrowRight {
-	right: 0;
+	right: -30px;
 }
 
 .arrowDisabled {
