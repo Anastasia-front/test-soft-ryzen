@@ -25,7 +25,7 @@ export function Mobile() {
 		>
 			<ul className="h-full">
 				{images.map((image) => (
-					<li key={image.id}>
+					<li key={image.id} className="h-[199px]">
 						<Image
 							src={image.src}
 							alt={image.alt}
