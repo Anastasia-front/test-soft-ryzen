@@ -20,16 +20,16 @@ export function Mobile() {
 	return (
 		<div
 			ref={ref}
-			className="keen-slider flex justify-center cursor-grab"
+			className="keen-slider flex justify-center"
 			style={{ height: 650, width: "100%" }}
 		>
-			<ul className="h-full">
+			<ul className="h-full cursor-grab">
 				{images.map((image) => (
-					<li key={image.id} className="h-[199px]">
+					<li key={image.id} className="h-[200px]">
 						<Image
 							src={image.src}
 							alt={image.alt}
-							className="keen-slider__slide "
+							className="keen-slider__slide"
 							width={280}
 							height={187}
 						/>

@@ -12,7 +12,7 @@ export default function About() {
 	const text = textData.about;
 
 	return (
-		<Section className={s.bg} id="about">
+		<Section className={s.bg}>
 			<h2
 				className="text-40 md:text-67 xl:text-98 font-100 leading-[40px] md:leading-[81px]
 			pb-[8px] md:pb-0 tracking-[-1.6px] md:tracking-[-2.68px] xl:tracking-[-3.92px] uppercase"
@@ -39,6 +39,7 @@ export default function About() {
 				<div
 					className="w-[180px] md:w-[220px] xl:w-[298px] text-14 md:text-16 xl:text-18 font-400
 				self-end md:self-start xl:self-end md:mt-[-60px] xl:mt-0 xl:mt-72px"
+					id="about"
 				>
 					<p className="uppercase">{text.goal.from}</p>
 					<p className="uppercase text-right">{text.goal.to}</p>
