@@ -1,16 +1,33 @@
+import { useEffect } from "react";
 import ReactDOM from "react-dom";
 
 import { useKeyPress } from "@/app/hooks/useKeyPress";
+import { useScrollLock } from "@/app/hooks/useScrollLock";
+
 import { Button } from "../Button/Button";
 
 interface ModalProps {
 	className?: string;
+	isOpen: boolean;
 	children: React.ReactNode;
 	onCloseMenu: () => void;
 }
 
-export function ModalPortal({ onCloseMenu, className, children }: ModalProps) {
+export function ModalPortal({
+	onCloseMenu,
+	isOpen,
+	className,
+	children,
+}: ModalProps) {
+	const { lockScroll, unlockScroll } = useScrollLock();
 	useKeyPress("Escape", onCloseMenu);
+
+	useEffect(() => {
+		lockScroll();
+		return () => unlockScroll();
+	}, [isOpen]);
+
+	if (!isOpen) return null;
 
 	const portalContainerId = "modal-root";
 

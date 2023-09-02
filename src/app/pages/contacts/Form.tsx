@@ -166,7 +166,9 @@ export function Form() {
 			>
 				{button}
 			</Button>
-			{open && <ModalSubmit text={modal} onCloseMenu={onCloseMenu} />}
+			{open && (
+				<ModalSubmit isOpen={open} text={modal} onCloseMenu={onCloseMenu} />
+			)}
 		</form>
 	);
 }
