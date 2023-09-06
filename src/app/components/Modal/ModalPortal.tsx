@@ -8,7 +8,7 @@ import { Button } from "../Button/Button";
 
 interface ModalProps {
 	className?: string;
-	isOpen: boolean;
+	isOpen?: boolean;
 	children: React.ReactNode;
 	onCloseMenu: () => void;
 }
@@ -16,7 +16,7 @@ interface ModalProps {
 export function ModalPortal({
 	onCloseMenu,
 	isOpen,
-	className,
+	className = "",
 	children,
 }: ModalProps) {
 	const { lockScroll, unlockScroll } = useScrollLock();

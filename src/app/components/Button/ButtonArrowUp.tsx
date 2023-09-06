@@ -10,7 +10,7 @@ type ButtonElement = HTMLElementTagNameMap["button"];
 type ButtonProps = React.HTMLAttributes<ButtonElement>;
 
 export const ButtonArrowUp = forwardRef<ButtonElement, ButtonProps>(
-	({ className, ...rest }, ref) => {
+	({ className = "", ...rest }, ref) => {
 		const [showButton, setShowButton] = useState(false);
 
 		const handleScrollUp = () => {

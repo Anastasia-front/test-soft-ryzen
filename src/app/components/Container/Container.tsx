@@ -3,7 +3,7 @@ interface ContainerProps {
 	className?: string;
 }
 
-export function Container({ children, className }: ContainerProps) {
+export function Container({ children, className = "" }: ContainerProps) {
 	return (
 		<div
 			className={`w-[100vw] max-w-[280px] s:max-w-[80vw] sm:max-w-[450px] md:max-w-[704px] xl:max-w-[1232px]

@@ -23,7 +23,7 @@ export const TextInput = forwardRef<TextInputElement, TextInputProps>(
 			register,
 			errors,
 			placeholder,
-			className,
+			className = "",
 			inputMode,
 			...rest
 		},

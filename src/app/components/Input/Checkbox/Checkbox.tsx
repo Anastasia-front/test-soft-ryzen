@@ -23,7 +23,7 @@ export function Checkbox(
 		disabled,
 		register,
 		errors,
-		className,
+		className = "",
 		...rest
 	}: CheckboxProps,
 	ref: React.ForwardedRef<HTMLInputElement>

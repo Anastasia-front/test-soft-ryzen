@@ -6,7 +6,7 @@ interface SectionProps {
 	id?: string;
 }
 
-export function Section({ children, className, id }: SectionProps) {
+export function Section({ children, className = "", id }: SectionProps) {
 	return (
 		<section
 			className={`px-[20px] py-[54px] md:px-[32px] md:py-[64px]

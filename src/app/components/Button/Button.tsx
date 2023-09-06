@@ -19,7 +19,7 @@ export const Button = forwardRef<ButtonElement, ButtonProps>(
 			disabled,
 			section,
 			children,
-			className,
+			className = "",
 			...rest
 		},
 		ref

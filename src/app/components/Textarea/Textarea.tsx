@@ -23,7 +23,7 @@ export function Textarea(
 		register,
 		errors,
 		placeholder,
-		className,
+		className = "",
 		inputMode,
 		...rest
 	}: TextareaProps,

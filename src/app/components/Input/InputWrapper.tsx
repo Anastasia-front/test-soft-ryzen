@@ -28,7 +28,7 @@ export const InputWrapper = forwardRef<InputWrapperElement, InputWrapperProps>(
 			required,
 			disabled,
 			error,
-			className,
+			className = "",
 			showError,
 			children,
 			...rest
