@@ -27,8 +27,6 @@ export function ModalPortal({
 		return () => unlockScroll();
 	}, [isOpen]);
 
-	if (!isOpen) return null;
-
 	const portalContainerId = "modal-root";
 
 	const portalContainer = document.getElementById(portalContainerId);
